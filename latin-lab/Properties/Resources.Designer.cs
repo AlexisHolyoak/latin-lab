@@ -153,6 +153,26 @@ namespace latin_lab.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ic_exit_to_app_black_24dp_1x {
+            get {
+                object obj = ResourceManager.GetObject("ic_exit_to_app_black_24dp_1x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_exit_to_app_black_24dp_2x {
+            get {
+                object obj = ResourceManager.GetObject("ic_exit_to_app_black_24dp_2x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap laboratorio1 {
             get {
                 object obj = ResourceManager.GetObject("laboratorio1", resourceCulture);
