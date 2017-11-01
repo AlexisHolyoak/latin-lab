@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace latin_lab
 {
-    public partial class Form1 : Form
+    public partial class frmLogin : Form
     {
-        public Form1()
+        public frmLogin()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTNLOGIN_Click(object sender, EventArgs e)
+        {
+            new frmMain().Show();
         }
     }
 }
