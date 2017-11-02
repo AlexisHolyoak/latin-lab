@@ -23,6 +23,7 @@ namespace latin_lab
         public void CargarDistritos() {
             using (ClinicaDBEntities context = new ClinicaDBEntities())
             {
+                var distritosd = context.Distritos.Select(x => x.nombreDistrito).ToList();
                 var distritos = from dis in context.Distritos select dis.nombreDistrito;
                 AutoCompleteStringCollection source = new AutoCompleteStringCollection();
                 source.AddRange(distritos.ToArray());
