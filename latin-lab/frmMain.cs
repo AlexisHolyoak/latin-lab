@@ -19,7 +19,7 @@ namespace latin_lab
         private ToolStripMenuItem sALIRToolStripMenuItem;
         private ToolStripMenuItem PACIENTESTOOL;
         private ToolStripMenuItem oRDENESToolStripMenuItem;
-        private ToolStripMenuItem eXAMENESToolStripMenuItem;
+        private ToolStripMenuItem EXAMENESTOOL;
         private ToolStripMenuItem pAGOSToolStripMenuItem;
         private ToolStripMenuItem tARJETASToolStripMenuItem;
         private ToolStripMenuItem eTIQUETASToolStripMenuItem;
@@ -27,8 +27,6 @@ namespace latin_lab
         private ToolStripMenuItem hISTORIAToolStripMenuItem;
         private ToolStripMenuItem cONFIGURACIONESToolStripMenuItem;
         private ToolStripMenuItem rEGISTROToolStripMenuItem1;
-        private ToolStripMenuItem aCTUALIZACIONToolStripMenuItem1;
-        private ToolStripMenuItem cONSULTAToolStripMenuItem1;
         private ToolStripMenuItem uSUARIOSToolStripMenuItem;
         private ToolStripMenuItem rEGISTROToolStripMenuItem2;
         private ToolStripMenuItem aCTUALIZACIONToolStripMenuItem2;
@@ -38,6 +36,7 @@ namespace latin_lab
         private ToolStripMenuItem bACKUPToolStripMenuItem;
         private ToolStripMenuItem rESTAURACIONESToolStripMenuItem;
         private ToolStripMenuItem sERVIDORToolStripMenuItem;
+        private ToolStripMenuItem TARIFARIOTOOL;
         private Label TXTNOMBREUSUARIO;
 
         public frmMain()
@@ -54,11 +53,10 @@ namespace latin_lab
             this.mENUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PACIENTESTOOL = new System.Windows.Forms.ToolStripMenuItem();
             this.oRDENESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eXAMENESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EXAMENESTOOL = new System.Windows.Forms.ToolStripMenuItem();
             this.pAGOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEGISTROToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.aCTUALIZACIONToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cONSULTAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.TARIFARIOTOOL = new System.Windows.Forms.ToolStripMenuItem();
             this.tARJETASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eTIQUETASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rESULTADOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -127,7 +125,7 @@ namespace latin_lab
             this.mENUToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.PACIENTESTOOL,
             this.oRDENESToolStripMenuItem,
-            this.eXAMENESToolStripMenuItem,
+            this.EXAMENESTOOL,
             this.pAGOSToolStripMenuItem,
             this.tARJETASToolStripMenuItem,
             this.eTIQUETASToolStripMenuItem,
@@ -157,19 +155,18 @@ namespace latin_lab
             this.oRDENESToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.oRDENESToolStripMenuItem.Text = "ORDENES";
             // 
-            // eXAMENESToolStripMenuItem
+            // EXAMENESTOOL
             // 
-            this.eXAMENESToolStripMenuItem.Image = global::latin_lab.Properties.Resources.Mind_Map_Paper_icon;
-            this.eXAMENESToolStripMenuItem.Name = "eXAMENESToolStripMenuItem";
-            this.eXAMENESToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.eXAMENESToolStripMenuItem.Text = "EXAMENES";
+            this.EXAMENESTOOL.Image = global::latin_lab.Properties.Resources.Mind_Map_Paper_icon;
+            this.EXAMENESTOOL.Name = "EXAMENESTOOL";
+            this.EXAMENESTOOL.Size = new System.Drawing.Size(181, 26);
+            this.EXAMENESTOOL.Text = "EXAMENES";
             // 
             // pAGOSToolStripMenuItem
             // 
             this.pAGOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rEGISTROToolStripMenuItem1,
-            this.aCTUALIZACIONToolStripMenuItem1,
-            this.cONSULTAToolStripMenuItem1});
+            this.TARIFARIOTOOL});
             this.pAGOSToolStripMenuItem.Image = global::latin_lab.Properties.Resources.payment_icon;
             this.pAGOSToolStripMenuItem.Name = "pAGOSToolStripMenuItem";
             this.pAGOSToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
@@ -178,20 +175,15 @@ namespace latin_lab
             // rEGISTROToolStripMenuItem1
             // 
             this.rEGISTROToolStripMenuItem1.Name = "rEGISTROToolStripMenuItem1";
-            this.rEGISTROToolStripMenuItem1.Size = new System.Drawing.Size(205, 26);
-            this.rEGISTROToolStripMenuItem1.Text = "REGISTRO";
+            this.rEGISTROToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.rEGISTROToolStripMenuItem1.Text = "REGISTROS";
             // 
-            // aCTUALIZACIONToolStripMenuItem1
+            // TARIFARIOTOOL
             // 
-            this.aCTUALIZACIONToolStripMenuItem1.Name = "aCTUALIZACIONToolStripMenuItem1";
-            this.aCTUALIZACIONToolStripMenuItem1.Size = new System.Drawing.Size(205, 26);
-            this.aCTUALIZACIONToolStripMenuItem1.Text = "ACTUALIZACION";
-            // 
-            // cONSULTAToolStripMenuItem1
-            // 
-            this.cONSULTAToolStripMenuItem1.Name = "cONSULTAToolStripMenuItem1";
-            this.cONSULTAToolStripMenuItem1.Size = new System.Drawing.Size(205, 26);
-            this.cONSULTAToolStripMenuItem1.Text = "CONSULTA";
+            this.TARIFARIOTOOL.Name = "TARIFARIOTOOL";
+            this.TARIFARIOTOOL.Size = new System.Drawing.Size(181, 26);
+            this.TARIFARIOTOOL.Text = "TARIFARIO";
+            this.TARIFARIOTOOL.Click += new System.EventHandler(this.TARIFARIOTOOL_Click);
             // 
             // tARJETASToolStripMenuItem
             // 
@@ -337,6 +329,11 @@ namespace latin_lab
         private void PACIENTESTOOL_Click(object sender, EventArgs e)
         {
             new frmPacientes().Show();
+        }
+
+        private void TARIFARIOTOOL_Click(object sender, EventArgs e)
+        {
+            new frmTarifario().Show();
         }
     }
 }

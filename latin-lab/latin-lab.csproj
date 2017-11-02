@@ -75,6 +75,12 @@
     <Compile Include="Distritos.cs">
       <DependentUpon>ClinicaDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="frmClaseServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClaseServicio.Designer.cs">
+      <DependentUpon>frmClaseServicio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,12 +96,27 @@
     <Compile Include="frmPacientes.Designer.cs">
       <DependentUpon>frmPacientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSubClaseServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubClaseServicio.Designer.cs">
+      <DependentUpon>frmSubClaseServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTarifario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTarifario.Designer.cs">
+      <DependentUpon>frmTarifario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provincias.cs">
       <DependentUpon>ClinicaDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Util\Age.cs" />
+    <EmbeddedResource Include="frmClaseServicio.resx">
+      <DependentUpon>frmClaseServicio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +125,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPacientes.resx">
       <DependentUpon>frmPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubClaseServicio.resx">
+      <DependentUpon>frmSubClaseServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTarifario.resx">
+      <DependentUpon>frmTarifario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -225,6 +252,7 @@
       <DependentUpon>ClinicaDBModel.edmx</DependentUpon>
       <LastGenOutput>ClinicaDBModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\ic_done_black_24dp_1x.png" />
     <None Include="Resources\ic_exit_to_app_black_24dp_1x.png" />
     <None Include="Resources\ic_exit_to_app_black_24dp_2x.png" />
   </ItemGroup>
