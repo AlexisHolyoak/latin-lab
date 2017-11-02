@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace latin_lab
 {
-    public partial class Form1 : Form
+    public partial class frmClaseServicio : Form
     {
-        public Form1()
+        public frmClaseServicio()
         {
             InitializeComponent();
         }
