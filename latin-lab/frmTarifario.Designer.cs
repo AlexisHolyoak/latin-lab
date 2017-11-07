@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,7 +77,6 @@
             this.BTNACTUALIZAR = new System.Windows.Forms.Button();
             this.BTNSALIR = new System.Windows.Forms.Button();
             this.BTNGUARDAR = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -111,6 +111,16 @@
             this.label2.Size = new System.Drawing.Size(172, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "ESTADO DEL REGISTRO";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::latin_lab.Properties.Resources.Zoom_icon1;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(405, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 25);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -409,6 +419,7 @@
             this.BTNSUBCLASE.TabIndex = 31;
             this.BTNSUBCLASE.Text = "+";
             this.BTNSUBCLASE.UseVisualStyleBackColor = true;
+            this.BTNSUBCLASE.Click += new System.EventHandler(this.BTNSUBCLASE_Click);
             // 
             // BTNCLASE
             // 
@@ -535,16 +546,6 @@
             this.BTNGUARDAR.Text = "GUARDAR";
             this.BTNGUARDAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BTNGUARDAR.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::latin_lab.Properties.Resources.Zoom_icon1;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(405, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 25);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmTarifario
             // 

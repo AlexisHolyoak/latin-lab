@@ -26,5 +26,10 @@ namespace latin_lab
         {
             new frmUnidadMedida().ShowDialog();
         }
+
+        private void BTNSUBCLASE_Click(object sender, EventArgs e)
+        {
+            new frmSubClaseServicio().ShowDialog();
+        }
     }
 }
