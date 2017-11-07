@@ -19,7 +19,17 @@ namespace latin_lab
 
         private void BTNCLASE_Click(object sender, EventArgs e)
         {
-            new frmClaseServicio().Show();
+            new frmClaseServicio().ShowDialog();
+        }
+
+        private void BTNUNIDADMED_Click(object sender, EventArgs e)
+        {
+            new frmUnidadMedida().ShowDialog();
+        }
+
+        private void BTNSUBCLASE_Click(object sender, EventArgs e)
+        {
+            new frmSubClaseServicio().ShowDialog();
         }
     }
 }

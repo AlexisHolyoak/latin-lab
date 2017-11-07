@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,12 +48,12 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.BTNUNIDADMED = new System.Windows.Forms.Button();
             this.BTNAREA = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -72,11 +73,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.BTNCANCELAR = new System.Windows.Forms.Button();
             this.BTNACTUALIZAR = new System.Windows.Forms.Button();
             this.BTNSALIR = new System.Windows.Forms.Button();
             this.BTNGUARDAR = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.BTNCANCELAR = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -96,29 +96,12 @@
             this.panel1.Size = new System.Drawing.Size(1173, 54);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // textBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "COD. TARIFA";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(102, 11);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(229, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 22);
-            this.textBox1.TabIndex = 2;
+            this.textBox2.Location = new System.Drawing.Point(972, 12);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(179, 22);
+            this.textBox2.TabIndex = 5;
             // 
             // label2
             // 
@@ -129,12 +112,42 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "ESTADO DEL REGISTRO";
             // 
-            // textBox2
+            // button1
             // 
-            this.textBox2.Location = new System.Drawing.Point(972, 12);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 22);
-            this.textBox2.TabIndex = 5;
+            this.button1.BackgroundImage = global::latin_lab.Properties.Resources.Zoom_icon1;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(405, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(29, 25);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(229, 12);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(170, 22);
+            this.textBox1.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.AutoCompleteCustomSource.AddRange(new string[] {
+            "Servicios",
+            "Productos"});
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(102, 11);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(2, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "COD. TARIFA";
             // 
             // label3
             // 
@@ -192,6 +205,7 @@
             // 
             // textBox3
             // 
+            this.textBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox3.Location = new System.Drawing.Point(157, 79);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(441, 22);
@@ -199,6 +213,7 @@
             // 
             // textBox4
             // 
+            this.textBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox4.Location = new System.Drawing.Point(157, 111);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(441, 22);
@@ -213,6 +228,7 @@
             // 
             // textBox8
             // 
+            this.textBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox8.Location = new System.Drawing.Point(294, 217);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
@@ -228,6 +244,7 @@
             // 
             // textBox10
             // 
+            this.textBox10.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox10.Location = new System.Drawing.Point(294, 251);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
@@ -247,46 +264,15 @@
             this.panel2.Size = new System.Drawing.Size(520, 134);
             this.panel2.TabIndex = 15;
             // 
-            // checkBox1
+            // checkBox6
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.checkBox1.Location = new System.Drawing.Point(1066, 108);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(120, 21);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "VETERINARIA";
-            this.checkBox1.UseVisualStyleBackColor = false;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(86, 6);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(169, 21);
-            this.checkBox2.TabIndex = 0;
-            this.checkBox2.Text = "Afecto a Categ. Social";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(86, 82);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(78, 21);
-            this.checkBox3.TabIndex = 1;
-            this.checkBox3.Text = "Inactivo";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(86, 58);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(103, 21);
-            this.checkBox4.TabIndex = 2;
-            this.checkBox4.Text = "Tarifa Libre";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(86, 108);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(97, 21);
+            this.checkBox6.TabIndex = 4;
+            this.checkBox6.Text = "Afecto IGV";
+            this.checkBox6.UseVisualStyleBackColor = true;
             // 
             // checkBox5
             // 
@@ -298,15 +284,46 @@
             this.checkBox5.Text = "Afecto a Categ. Temporal";
             this.checkBox5.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // checkBox4
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(86, 108);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(97, 21);
-            this.checkBox6.TabIndex = 4;
-            this.checkBox6.Text = "Afecto IGV";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(86, 58);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(103, 21);
+            this.checkBox4.TabIndex = 2;
+            this.checkBox4.Text = "Tarifa Libre";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(86, 82);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(78, 21);
+            this.checkBox3.TabIndex = 1;
+            this.checkBox3.Text = "Inactivo";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(86, 6);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(169, 21);
+            this.checkBox2.TabIndex = 0;
+            this.checkBox2.Text = "Afecto a Categ. Social";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.checkBox1.Location = new System.Drawing.Point(1066, 108);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(120, 21);
+            this.checkBox1.TabIndex = 16;
+            this.checkBox1.Text = "VETERINARIA";
+            this.checkBox1.UseVisualStyleBackColor = false;
             // 
             // BTNUNIDADMED
             // 
@@ -318,6 +335,7 @@
             this.BTNUNIDADMED.TabIndex = 17;
             this.BTNUNIDADMED.Text = "+";
             this.BTNUNIDADMED.UseVisualStyleBackColor = true;
+            this.BTNUNIDADMED.Click += new System.EventHandler(this.BTNUNIDADMED_Click);
             // 
             // BTNAREA
             // 
@@ -401,6 +419,7 @@
             this.BTNSUBCLASE.TabIndex = 31;
             this.BTNSUBCLASE.Text = "+";
             this.BTNSUBCLASE.UseVisualStyleBackColor = true;
+            this.BTNSUBCLASE.Click += new System.EventHandler(this.BTNSUBCLASE_Click);
             // 
             // BTNCLASE
             // 
@@ -431,6 +450,7 @@
             // 
             // textBox13
             // 
+            this.textBox13.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox13.Location = new System.Drawing.Point(294, 146);
             this.textBox13.Name = "textBox13";
             this.textBox13.ReadOnly = true;
@@ -477,6 +497,19 @@
             this.label12.TabIndex = 35;
             this.label12.Text = "OBS";
             // 
+            // BTNCANCELAR
+            // 
+            this.BTNCANCELAR.Enabled = false;
+            this.BTNCANCELAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNCANCELAR.Image = global::latin_lab.Properties.Resources.Close_2_icon;
+            this.BTNCANCELAR.Location = new System.Drawing.Point(903, 608);
+            this.BTNCANCELAR.Name = "BTNCANCELAR";
+            this.BTNCANCELAR.Size = new System.Drawing.Size(149, 50);
+            this.BTNCANCELAR.TabIndex = 39;
+            this.BTNCANCELAR.Text = "CANCELAR";
+            this.BTNCANCELAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BTNCANCELAR.UseVisualStyleBackColor = true;
+            // 
             // BTNACTUALIZAR
             // 
             this.BTNACTUALIZAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -513,29 +546,6 @@
             this.BTNGUARDAR.Text = "GUARDAR";
             this.BTNGUARDAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BTNGUARDAR.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::latin_lab.Properties.Resources.Zoom_icon1;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(405, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(29, 25);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // BTNCANCELAR
-            // 
-            this.BTNCANCELAR.Enabled = false;
-            this.BTNCANCELAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNCANCELAR.Image = global::latin_lab.Properties.Resources.Close_2_icon;
-            this.BTNCANCELAR.Location = new System.Drawing.Point(903, 608);
-            this.BTNCANCELAR.Name = "BTNCANCELAR";
-            this.BTNCANCELAR.Size = new System.Drawing.Size(149, 50);
-            this.BTNCANCELAR.TabIndex = 39;
-            this.BTNCANCELAR.Text = "CANCELAR";
-            this.BTNCANCELAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BTNCANCELAR.UseVisualStyleBackColor = true;
             // 
             // frmTarifario
             // 
