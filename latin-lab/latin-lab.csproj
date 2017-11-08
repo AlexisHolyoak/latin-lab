@@ -96,11 +96,23 @@
     <Compile Include="frmPacientes.Designer.cs">
       <DependentUpon>frmPacientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSolicitudExamen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSolicitudExamen.Designer.cs">
+      <DependentUpon>frmSolicitudExamen.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSubClaseServicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSubClaseServicio.Designer.cs">
       <DependentUpon>frmSubClaseServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSueldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSueldos.Designer.cs">
+      <DependentUpon>frmSueldos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTarifario.cs">
       <SubType>Form</SubType>
@@ -113,6 +125,18 @@
     </Compile>
     <Compile Include="frmUnidadMedida.Designer.cs">
       <DependentUpon>frmUnidadMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTrabajador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTrabajador.Designer.cs">
+      <DependentUpon>frmTrabajador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,14 +156,26 @@
     <EmbeddedResource Include="frmPacientes.resx">
       <DependentUpon>frmPacientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSolicitudExamen.resx">
+      <DependentUpon>frmSolicitudExamen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSubClaseServicio.resx">
       <DependentUpon>frmSubClaseServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSueldos.resx">
+      <DependentUpon>frmSueldos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTarifario.resx">
       <DependentUpon>frmTarifario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUnidadMedida.resx">
       <DependentUpon>frmUnidadMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTrabajador.resx">
+      <DependentUpon>frmTrabajador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -261,6 +297,9 @@
       <DependentUpon>ClinicaDBModel.edmx</DependentUpon>
       <LastGenOutput>ClinicaDBModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\New-file-icon.png" />
+    <None Include="Resources\pan-icon.png" />
+    <None Include="Resources\calendar-empty-icon.png" />
     <None Include="Resources\ic_done_black_24dp_1x.png" />
     <None Include="Resources\ic_exit_to_app_black_24dp_1x.png" />
     <None Include="Resources\ic_exit_to_app_black_24dp_2x.png" />
