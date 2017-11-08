@@ -119,6 +119,7 @@
     <Compile Include="Provincias.cs">
       <DependentUpon>ClinicaDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repository\Abc.cs" />
     <Compile Include="Util\Age.cs" />
     <EmbeddedResource Include="frmClaseServicio.resx">
       <DependentUpon>frmClaseServicio.cs</DependentUpon>
