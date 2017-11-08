@@ -1015,7 +1015,9 @@
 			    (object ClassAttribute "monto"
 				quid       	"5A0259520374")
 			    (object ClassAttribute "fecha"
-				quid       	"5A00FA0C0240"))
+				quid       	"5A00FA0C0240")
+			    (object ClassAttribute "something"
+				quid       	"5A02605C01E9"))
 			language   	"Java")
 		    (object Class "Pacientes"
 			attributes 	(list Attribute_Set
@@ -2351,7 +2353,7 @@
 				ShowCompartmentStereotypes 	TRUE
 				IncludeAttribute 	TRUE
 				IncludeOperation 	TRUE
-				location   	(896, 288)
+				location   	(1184, 240)
 				font       	(object Font
 				    size       	9
 				    face       	"Arial"
@@ -2363,10 +2365,10 @@
 				    default_color 	TRUE)
 				label      	(object ItemLabel
 				    Parent_View 	@27
-				    location   	(785, 136)
+				    location   	(1059, 63)
 				    fill_color 	13434879
 				    nlines     	1
-				    max_width  	222
+				    max_width  	250
 				    justify    	0
 				    label      	"Egresos")
 				icon_style 	"Icon"
@@ -2375,7 +2377,7 @@
 				quidu      	"59FB540C02BA"
 				compartment 	(object Compartment
 				    Parent_View 	@27
-				    location   	(785, 196)
+				    location   	(1059, 123)
 				    font       	(object Font
 					size       	9
 					face       	"Arial"
@@ -2388,11 +2390,11 @@
 				    icon_style 	"Icon"
 				    fill_color 	16777215
 				    anchor     	2
-				    nlines     	5
-				    max_width  	218
+				    nlines     	6
+				    max_width  	247
 				    justify    	1)
-				width      	240
-				height     	328
+				width      	268
+				height     	378
 				annotation 	8
 				autoResize 	TRUE)
 			    (object ClassView "Class" "Logical View::Analysis Model::Resultados" @28

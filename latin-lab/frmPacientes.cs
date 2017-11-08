@@ -18,22 +18,6 @@ namespace latin_lab
         public frmPacientes()
         {
             InitializeComponent();
-            CargarDistritos();
-        }
-        public void CargarDistritos() {
-            using (ClinicaDBEntities context = new ClinicaDBEntities())
-            {
-                var distritosd = context.Distritos.Select(x => x.nombreDistrito).ToList();
-                var distritos = from dis in context.Distritos select dis.nombreDistrito;
-                AutoCompleteStringCollection source = new AutoCompleteStringCollection();
-                source.AddRange(distritos.ToArray());
-                TXTDISTRITO.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                TXTDISTRITO.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                TXTDISTRITO.AutoCompleteCustomSource = source;
-                TXTLUGARNAC.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                TXTLUGARNAC.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                TXTLUGARNAC.AutoCompleteCustomSource = source;
-            }
         }
         //KEYLISTENER QUE VERIFICA EL INGRESO DE NUMEROS
         public void SoloNumeros(object sender, KeyPressEventArgs e)
@@ -50,12 +34,7 @@ namespace latin_lab
             {
                 e.Handled = true;
             }
-        }
-        public void CargarDistritos(AutoCompleteStringCollection src) {
-            //TXTDISTRITO.AutoCompleteCustomSource = src;
-            //TXTDISTRITO.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            //TXTDISTRITO.AutoCompleteSource = AutoCompleteSource.CustomSource;
-        }       
+        }      
         private void BTNGUARDAR_Click(object sender, EventArgs e)
         {
             LimpiarErrores();
@@ -71,17 +50,7 @@ namespace latin_lab
             TXTSCNDNOMBRE.Text = new CultureInfo("en-US").TextInfo.ToTitleCase(TXTSCNDNOMBRE.Text);
             TXTDIRECCION.Text=new CultureInfo("en-US").TextInfo.ToTitleCase(TXTDIRECCION.Text);
         }
-        private void TXTDISTRITO_TextChanged(object sender, EventArgs e)
-        {
-            TXTIDDISTRITO.Text = "";
-            using (ClinicaDBEntities context = new ClinicaDBEntities()) {
-                var id = from dis in context.Distritos where dis.nombreDistrito == TXTDISTRITO.Text select dis;
-                List<Distritos> objDistrito = id.ToList();
-                foreach (Distritos d in objDistrito) {
-                    TXTIDDISTRITO.Text = d.idDistrito.ToString();
-                }
-            }
-        }
+        
         private void DTNACIMIENTO_ValueChanged(object sender, EventArgs e)
         {
             TXTEDAD.Text   = "";
@@ -151,8 +120,8 @@ namespace latin_lab
             TextBox[] txt = new TextBox[] {
                 TXTPATERNO,TXTMATERNO,TXTFRSTNOMBRE,TXTSCNDNOMBRE,TXTLUGARNAC,
                 TXTDOCID,TXTDIRECCION,TXTNRO,TXTINTERIOR,TXTMZA,TXTLOTE,
-                TXTLOCALIDAD,TXTDISTRITO,TXTTELEFONO,TXTMOVIL,TXTTRABAJO
-           };
+                TXTLOCALIDAD,TXTTELEFONO,TXTMOVIL,TXTTRABAJO
+            };
             foreach (TextBox t in txt) {
                 t.Enabled = true;
                 t.ReadOnly = false;
@@ -168,33 +137,52 @@ namespace latin_lab
         {
             LimpiarErrores();
             // TODO: MANEJAR QUE LOS DATOS DEL PACIENTE RETORNEN A SU ESTADO NORMAL
-            
-                BTNCANCELAR.Enabled = false;
-                BTNACTUALIZAR.Enabled = true;
-                BTNGUARDAR.Enabled = false;
-                BTNIMPRIMIR.Enabled = true;
-                TextBox[] txt = new TextBox[] {
+            BTNCANCELAR.Enabled = false;
+            BTNACTUALIZAR.Enabled = true;
+            BTNGUARDAR.Enabled = false;
+            BTNIMPRIMIR.Enabled = true;
+            TextBox[] txt = new TextBox[] {
                 TXTPATERNO,TXTMATERNO,TXTFRSTNOMBRE,TXTSCNDNOMBRE,TXTLUGARNAC,
                 TXTDOCID,TXTDIRECCION,TXTNRO,TXTINTERIOR,TXTMZA,TXTLOTE,
                 TXTLOCALIDAD,TXTDISTRITO,TXTTELEFONO,TXTMOVIL,TXTTRABAJO
-           };
-                foreach (TextBox t in txt)
-                {
-                    t.Enabled = false;
-                    t.ReadOnly = true;
-                }
-                DTNACIMIENTO.Enabled = false;
-                CBSEXO.Enabled = false;
-                CBTIPODOC.Enabled = false;
-                CBVETERINARIA.Enabled = false;
-                CBDISCAPACITADO.Enabled = false;
-                   
+            };
+            foreach (TextBox t in txt)
+            {
+                t.Enabled = false;
+                t.ReadOnly = true;
+            }
+            DTNACIMIENTO.Enabled = false;
+            CBSEXO.Enabled = false;
+            CBTIPODOC.Enabled = false;
+            CBVETERINARIA.Enabled = false;
+            CBDISCAPACITADO.Enabled = false;
         }
 
         private void BTNSALIR_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void BTNUNIDADMED_Click(object sender, EventArgs e)
+        {
+            new frmBuscarDistrito(this).ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new frmBuscarPaciente(this).ShowDialog();
+        }
+
+        private void frmPacientes_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+
+            {
+                //meneo aqui
+                
+            }
+        }
+        
     }
 
 }

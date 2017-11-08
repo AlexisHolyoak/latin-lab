@@ -37,6 +37,8 @@ namespace latin_lab
         private ToolStripMenuItem rESTAURACIONESToolStripMenuItem;
         private ToolStripMenuItem sERVIDORToolStripMenuItem;
         private ToolStripMenuItem TARIFARIOTOOL;
+        private NotifyIcon notifyIcon;
+        private IContainer components;
         private Label TXTNOMBREUSUARIO;
 
         public frmMain()
@@ -46,6 +48,7 @@ namespace latin_lab
 
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.TXTNOMBREUSUARIO = new System.Windows.Forms.Label();
@@ -72,6 +75,7 @@ namespace latin_lab
             this.sERVIDORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +87,7 @@ namespace latin_lab
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(12, 536);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 29);
+            this.label1.Size = new System.Drawing.Size(147, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "BIENVENID@";
             // 
@@ -101,7 +105,7 @@ namespace latin_lab
             this.TXTNOMBREUSUARIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TXTNOMBREUSUARIO.Location = new System.Drawing.Point(200, 539);
             this.TXTNOMBREUSUARIO.Name = "TXTNOMBREUSUARIO";
-            this.TXTNOMBREUSUARIO.Size = new System.Drawing.Size(83, 26);
+            this.TXTNOMBREUSUARIO.Size = new System.Drawing.Size(69, 22);
             this.TXTNOMBREUSUARIO.TabIndex = 2;
             this.TXTNOMBREUSUARIO.Text = "usuario";
             // 
@@ -137,14 +141,14 @@ namespace latin_lab
             this.mENUToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.mENUToolStripMenuItem.Image = global::latin_lab.Properties.Resources.Start_Menu_Program_Defaults_icon;
             this.mENUToolStripMenuItem.Name = "mENUToolStripMenuItem";
-            this.mENUToolStripMenuItem.Size = new System.Drawing.Size(86, 50);
+            this.mENUToolStripMenuItem.Size = new System.Drawing.Size(74, 50);
             this.mENUToolStripMenuItem.Text = "MENU";
             // 
             // PACIENTESTOOL
             // 
             this.PACIENTESTOOL.Image = global::latin_lab.Properties.Resources.Places_user_identity_icon;
             this.PACIENTESTOOL.Name = "PACIENTESTOOL";
-            this.PACIENTESTOOL.Size = new System.Drawing.Size(181, 26);
+            this.PACIENTESTOOL.Size = new System.Drawing.Size(148, 22);
             this.PACIENTESTOOL.Text = "PACIENTES";
             this.PACIENTESTOOL.Click += new System.EventHandler(this.PACIENTESTOOL_Click);
             // 
@@ -152,14 +156,14 @@ namespace latin_lab
             // 
             this.oRDENESToolStripMenuItem.Image = global::latin_lab.Properties.Resources.Status_mail_task_icon;
             this.oRDENESToolStripMenuItem.Name = "oRDENESToolStripMenuItem";
-            this.oRDENESToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.oRDENESToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.oRDENESToolStripMenuItem.Text = "ORDENES";
             // 
             // EXAMENESTOOL
             // 
             this.EXAMENESTOOL.Image = global::latin_lab.Properties.Resources.Mind_Map_Paper_icon;
             this.EXAMENESTOOL.Name = "EXAMENESTOOL";
-            this.EXAMENESTOOL.Size = new System.Drawing.Size(181, 26);
+            this.EXAMENESTOOL.Size = new System.Drawing.Size(148, 22);
             this.EXAMENESTOOL.Text = "EXAMENES";
             // 
             // pAGOSToolStripMenuItem
@@ -169,19 +173,19 @@ namespace latin_lab
             this.TARIFARIOTOOL});
             this.pAGOSToolStripMenuItem.Image = global::latin_lab.Properties.Resources.payment_icon;
             this.pAGOSToolStripMenuItem.Name = "pAGOSToolStripMenuItem";
-            this.pAGOSToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.pAGOSToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.pAGOSToolStripMenuItem.Text = "PAGOS";
             // 
             // rEGISTROToolStripMenuItem1
             // 
             this.rEGISTROToolStripMenuItem1.Name = "rEGISTROToolStripMenuItem1";
-            this.rEGISTROToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.rEGISTROToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
             this.rEGISTROToolStripMenuItem1.Text = "REGISTROS";
             // 
             // TARIFARIOTOOL
             // 
             this.TARIFARIOTOOL.Name = "TARIFARIOTOOL";
-            this.TARIFARIOTOOL.Size = new System.Drawing.Size(181, 26);
+            this.TARIFARIOTOOL.Size = new System.Drawing.Size(139, 22);
             this.TARIFARIOTOOL.Text = "TARIFARIO";
             this.TARIFARIOTOOL.Click += new System.EventHandler(this.TARIFARIOTOOL_Click);
             // 
@@ -189,28 +193,28 @@ namespace latin_lab
             // 
             this.tARJETASToolStripMenuItem.Image = global::latin_lab.Properties.Resources.Drives_SD_Card_Metro_icon;
             this.tARJETASToolStripMenuItem.Name = "tARJETASToolStripMenuItem";
-            this.tARJETASToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.tARJETASToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.tARJETASToolStripMenuItem.Text = "TARJETAS";
             // 
             // eTIQUETASToolStripMenuItem
             // 
             this.eTIQUETASToolStripMenuItem.Image = global::latin_lab.Properties.Resources.tag_alt_icon;
             this.eTIQUETASToolStripMenuItem.Name = "eTIQUETASToolStripMenuItem";
-            this.eTIQUETASToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.eTIQUETASToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.eTIQUETASToolStripMenuItem.Text = "ETIQUETAS";
             // 
             // rESULTADOSToolStripMenuItem
             // 
             this.rESULTADOSToolStripMenuItem.Image = global::latin_lab.Properties.Resources.application_search_result_icon;
             this.rESULTADOSToolStripMenuItem.Name = "rESULTADOSToolStripMenuItem";
-            this.rESULTADOSToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.rESULTADOSToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.rESULTADOSToolStripMenuItem.Text = "RESULTADOS";
             // 
             // hISTORIAToolStripMenuItem
             // 
             this.hISTORIAToolStripMenuItem.Image = global::latin_lab.Properties.Resources.File_History_icon;
             this.hISTORIAToolStripMenuItem.Name = "hISTORIAToolStripMenuItem";
-            this.hISTORIAToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.hISTORIAToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.hISTORIAToolStripMenuItem.Text = "HISTORIA";
             // 
             // uSUARIOSToolStripMenuItem
@@ -221,32 +225,32 @@ namespace latin_lab
             this.cONSULTAToolStripMenuItem2});
             this.uSUARIOSToolStripMenuItem.Image = global::latin_lab.Properties.Resources.User_Group_icon;
             this.uSUARIOSToolStripMenuItem.Name = "uSUARIOSToolStripMenuItem";
-            this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.uSUARIOSToolStripMenuItem.Text = "USUARIOS";
             // 
             // rEGISTROToolStripMenuItem2
             // 
             this.rEGISTROToolStripMenuItem2.Name = "rEGISTROToolStripMenuItem2";
-            this.rEGISTROToolStripMenuItem2.Size = new System.Drawing.Size(205, 26);
+            this.rEGISTROToolStripMenuItem2.Size = new System.Drawing.Size(167, 22);
             this.rEGISTROToolStripMenuItem2.Text = "REGISTRO";
             // 
             // aCTUALIZACIONToolStripMenuItem2
             // 
             this.aCTUALIZACIONToolStripMenuItem2.Name = "aCTUALIZACIONToolStripMenuItem2";
-            this.aCTUALIZACIONToolStripMenuItem2.Size = new System.Drawing.Size(205, 26);
+            this.aCTUALIZACIONToolStripMenuItem2.Size = new System.Drawing.Size(167, 22);
             this.aCTUALIZACIONToolStripMenuItem2.Text = "ACTUALIZACION";
             // 
             // cONSULTAToolStripMenuItem2
             // 
             this.cONSULTAToolStripMenuItem2.Name = "cONSULTAToolStripMenuItem2";
-            this.cONSULTAToolStripMenuItem2.Size = new System.Drawing.Size(205, 26);
+            this.cONSULTAToolStripMenuItem2.Size = new System.Drawing.Size(167, 22);
             this.cONSULTAToolStripMenuItem2.Text = "CONSULTA";
             // 
             // rEPORTESToolStripMenuItem
             // 
             this.rEPORTESToolStripMenuItem.Image = global::latin_lab.Properties.Resources.Product_sale_report_icon;
             this.rEPORTESToolStripMenuItem.Name = "rEPORTESToolStripMenuItem";
-            this.rEPORTESToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.rEPORTESToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.rEPORTESToolStripMenuItem.Text = "REPORTES";
             // 
             // cONFIGURACIONESToolStripMenuItem
@@ -259,28 +263,28 @@ namespace latin_lab
             this.cONFIGURACIONESToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.cONFIGURACIONESToolStripMenuItem.Image = global::latin_lab.Properties.Resources.Settings_L_icon;
             this.cONFIGURACIONESToolStripMenuItem.Name = "cONFIGURACIONESToolStripMenuItem";
-            this.cONFIGURACIONESToolStripMenuItem.Size = new System.Drawing.Size(182, 50);
+            this.cONFIGURACIONESToolStripMenuItem.Size = new System.Drawing.Size(150, 50);
             this.cONFIGURACIONESToolStripMenuItem.Text = "CONFIGURACIONES";
             // 
             // bACKUPToolStripMenuItem
             // 
             this.bACKUPToolStripMenuItem.Image = global::latin_lab.Properties.Resources.ModernXP_54_Folder_Backup_Scheduled_icon;
             this.bACKUPToolStripMenuItem.Name = "bACKUPToolStripMenuItem";
-            this.bACKUPToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.bACKUPToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.bACKUPToolStripMenuItem.Text = "BACKUP";
             // 
             // rESTAURACIONESToolStripMenuItem
             // 
             this.rESTAURACIONESToolStripMenuItem.Image = global::latin_lab.Properties.Resources.Drive_Restore_icon;
             this.rESTAURACIONESToolStripMenuItem.Name = "rESTAURACIONESToolStripMenuItem";
-            this.rESTAURACIONESToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.rESTAURACIONESToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.rESTAURACIONESToolStripMenuItem.Text = "RESTAURACIONES";
             // 
             // sERVIDORToolStripMenuItem
             // 
             this.sERVIDORToolStripMenuItem.Image = global::latin_lab.Properties.Resources.cloud_icon;
             this.sERVIDORToolStripMenuItem.Name = "sERVIDORToolStripMenuItem";
-            this.sERVIDORToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.sERVIDORToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.sERVIDORToolStripMenuItem.Text = "SERVIDOR";
             // 
             // sALIRToolStripMenuItem
@@ -290,7 +294,7 @@ namespace latin_lab
             this.sALIRToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.sALIRToolStripMenuItem.Image = global::latin_lab.Properties.Resources.actions_window_close_icon;
             this.sALIRToolStripMenuItem.Name = "sALIRToolStripMenuItem";
-            this.sALIRToolStripMenuItem.Size = new System.Drawing.Size(83, 50);
+            this.sALIRToolStripMenuItem.Size = new System.Drawing.Size(72, 50);
             this.sALIRToolStripMenuItem.Text = "SALIR";
             // 
             // label2
@@ -301,9 +305,14 @@ namespace latin_lab
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(767, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 29);
+            this.label2.Size = new System.Drawing.Size(121, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "LATIN LAB";
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Text = "notifyIcon1";
+            this.notifyIcon.Visible = true;
             // 
             // frmMain
             // 
@@ -319,6 +328,7 @@ namespace latin_lab
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmMain";
             this.Text = "LATIN LAB";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

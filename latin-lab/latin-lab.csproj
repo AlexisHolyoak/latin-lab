@@ -75,11 +75,23 @@
     <Compile Include="Distritos.cs">
       <DependentUpon>ClinicaDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="frmBuscarPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarPaciente.Designer.cs">
+      <DependentUpon>frmBuscarPaciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClaseServicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmClaseServicio.Designer.cs">
       <DependentUpon>frmClaseServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarDistrito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarDistrito.Designer.cs">
+      <DependentUpon>frmBuscarDistrito.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -119,10 +131,16 @@
     <Compile Include="Provincias.cs">
       <DependentUpon>ClinicaDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Repository\Abc.cs" />
+    <Compile Include="Repository\Repositorio.cs" />
     <Compile Include="Util\Age.cs" />
+    <EmbeddedResource Include="frmBuscarPaciente.resx">
+      <DependentUpon>frmBuscarPaciente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClaseServicio.resx">
       <DependentUpon>frmClaseServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarDistrito.resx">
+      <DependentUpon>frmBuscarDistrito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
