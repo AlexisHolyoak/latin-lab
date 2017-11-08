@@ -22,13 +22,12 @@ namespace latin_lab
         private ToolStripMenuItem EXAMENESTOOL;
         private ToolStripMenuItem pAGOSToolStripMenuItem;
         private ToolStripMenuItem tARJETASToolStripMenuItem;
-        private ToolStripMenuItem eTIQUETASToolStripMenuItem;
         private ToolStripMenuItem rESULTADOSToolStripMenuItem;
         private ToolStripMenuItem hISTORIAToolStripMenuItem;
         private ToolStripMenuItem cONFIGURACIONESToolStripMenuItem;
         private ToolStripMenuItem rEGISTROToolStripMenuItem1;
         private ToolStripMenuItem uSUARIOSToolStripMenuItem;
-        private ToolStripMenuItem rEGISTROToolStripMenuItem2;
+        private ToolStripMenuItem USUARIOSTOOL;
         private ToolStripMenuItem aCTUALIZACIONToolStripMenuItem2;
         private ToolStripMenuItem cONSULTAToolStripMenuItem2;
         private ToolStripMenuItem rEPORTESToolStripMenuItem;
@@ -37,6 +36,7 @@ namespace latin_lab
         private ToolStripMenuItem rESTAURACIONESToolStripMenuItem;
         private ToolStripMenuItem sERVIDORToolStripMenuItem;
         private ToolStripMenuItem TARIFARIOTOOL;
+        private ToolStripMenuItem eMPRESASToolStripMenuItem;
         private Label TXTNOMBREUSUARIO;
 
         public frmMain()
@@ -58,14 +58,14 @@ namespace latin_lab
             this.rEGISTROToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.TARIFARIOTOOL = new System.Windows.Forms.ToolStripMenuItem();
             this.tARJETASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eTIQUETASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rESULTADOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hISTORIAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uSUARIOSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rEGISTROToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.aCTUALIZACIONToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.USUARIOSTOOL = new System.Windows.Forms.ToolStripMenuItem();
             this.cONSULTAToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eMPRESASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cONFIGURACIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bACKUPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rESTAURACIONESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -128,11 +128,11 @@ namespace latin_lab
             this.EXAMENESTOOL,
             this.pAGOSToolStripMenuItem,
             this.tARJETASToolStripMenuItem,
-            this.eTIQUETASToolStripMenuItem,
             this.rESULTADOSToolStripMenuItem,
             this.hISTORIAToolStripMenuItem,
             this.uSUARIOSToolStripMenuItem,
-            this.rEPORTESToolStripMenuItem});
+            this.rEPORTESToolStripMenuItem,
+            this.eMPRESASToolStripMenuItem});
             this.mENUToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.mENUToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.mENUToolStripMenuItem.Image = global::latin_lab.Properties.Resources.Start_Menu_Program_Defaults_icon;
@@ -144,7 +144,7 @@ namespace latin_lab
             // 
             this.PACIENTESTOOL.Image = global::latin_lab.Properties.Resources.Places_user_identity_icon;
             this.PACIENTESTOOL.Name = "PACIENTESTOOL";
-            this.PACIENTESTOOL.Size = new System.Drawing.Size(181, 26);
+            this.PACIENTESTOOL.Size = new System.Drawing.Size(202, 26);
             this.PACIENTESTOOL.Text = "PACIENTES";
             this.PACIENTESTOOL.Click += new System.EventHandler(this.PACIENTESTOOL_Click);
             // 
@@ -152,15 +152,16 @@ namespace latin_lab
             // 
             this.oRDENESToolStripMenuItem.Image = global::latin_lab.Properties.Resources.Status_mail_task_icon;
             this.oRDENESToolStripMenuItem.Name = "oRDENESToolStripMenuItem";
-            this.oRDENESToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.oRDENESToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.oRDENESToolStripMenuItem.Text = "ORDENES";
             // 
             // EXAMENESTOOL
             // 
             this.EXAMENESTOOL.Image = global::latin_lab.Properties.Resources.Mind_Map_Paper_icon;
             this.EXAMENESTOOL.Name = "EXAMENESTOOL";
-            this.EXAMENESTOOL.Size = new System.Drawing.Size(181, 26);
+            this.EXAMENESTOOL.Size = new System.Drawing.Size(202, 26);
             this.EXAMENESTOOL.Text = "EXAMENES";
+            this.EXAMENESTOOL.Click += new System.EventHandler(this.EXAMENESTOOL_Click);
             // 
             // pAGOSToolStripMenuItem
             // 
@@ -169,19 +170,19 @@ namespace latin_lab
             this.TARIFARIOTOOL});
             this.pAGOSToolStripMenuItem.Image = global::latin_lab.Properties.Resources.payment_icon;
             this.pAGOSToolStripMenuItem.Name = "pAGOSToolStripMenuItem";
-            this.pAGOSToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.pAGOSToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.pAGOSToolStripMenuItem.Text = "PAGOS";
             // 
             // rEGISTROToolStripMenuItem1
             // 
             this.rEGISTROToolStripMenuItem1.Name = "rEGISTROToolStripMenuItem1";
-            this.rEGISTROToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
+            this.rEGISTROToolStripMenuItem1.Size = new System.Drawing.Size(164, 26);
             this.rEGISTROToolStripMenuItem1.Text = "REGISTROS";
             // 
             // TARIFARIOTOOL
             // 
             this.TARIFARIOTOOL.Name = "TARIFARIOTOOL";
-            this.TARIFARIOTOOL.Size = new System.Drawing.Size(181, 26);
+            this.TARIFARIOTOOL.Size = new System.Drawing.Size(164, 26);
             this.TARIFARIOTOOL.Text = "TARIFARIO";
             this.TARIFARIOTOOL.Click += new System.EventHandler(this.TARIFARIOTOOL_Click);
             // 
@@ -189,65 +190,66 @@ namespace latin_lab
             // 
             this.tARJETASToolStripMenuItem.Image = global::latin_lab.Properties.Resources.Drives_SD_Card_Metro_icon;
             this.tARJETASToolStripMenuItem.Name = "tARJETASToolStripMenuItem";
-            this.tARJETASToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.tARJETASToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.tARJETASToolStripMenuItem.Text = "TARJETAS";
-            // 
-            // eTIQUETASToolStripMenuItem
-            // 
-            this.eTIQUETASToolStripMenuItem.Image = global::latin_lab.Properties.Resources.tag_alt_icon;
-            this.eTIQUETASToolStripMenuItem.Name = "eTIQUETASToolStripMenuItem";
-            this.eTIQUETASToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.eTIQUETASToolStripMenuItem.Text = "ETIQUETAS";
             // 
             // rESULTADOSToolStripMenuItem
             // 
             this.rESULTADOSToolStripMenuItem.Image = global::latin_lab.Properties.Resources.application_search_result_icon;
             this.rESULTADOSToolStripMenuItem.Name = "rESULTADOSToolStripMenuItem";
-            this.rESULTADOSToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.rESULTADOSToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.rESULTADOSToolStripMenuItem.Text = "RESULTADOS";
             // 
             // hISTORIAToolStripMenuItem
             // 
             this.hISTORIAToolStripMenuItem.Image = global::latin_lab.Properties.Resources.File_History_icon;
             this.hISTORIAToolStripMenuItem.Name = "hISTORIAToolStripMenuItem";
-            this.hISTORIAToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.hISTORIAToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.hISTORIAToolStripMenuItem.Text = "HISTORIA";
             // 
             // uSUARIOSToolStripMenuItem
             // 
             this.uSUARIOSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rEGISTROToolStripMenuItem2,
             this.aCTUALIZACIONToolStripMenuItem2,
+            this.USUARIOSTOOL,
             this.cONSULTAToolStripMenuItem2});
             this.uSUARIOSToolStripMenuItem.Image = global::latin_lab.Properties.Resources.User_Group_icon;
             this.uSUARIOSToolStripMenuItem.Name = "uSUARIOSToolStripMenuItem";
-            this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
-            this.uSUARIOSToolStripMenuItem.Text = "USUARIOS";
-            // 
-            // rEGISTROToolStripMenuItem2
-            // 
-            this.rEGISTROToolStripMenuItem2.Name = "rEGISTROToolStripMenuItem2";
-            this.rEGISTROToolStripMenuItem2.Size = new System.Drawing.Size(205, 26);
-            this.rEGISTROToolStripMenuItem2.Text = "REGISTRO";
+            this.uSUARIOSToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.uSUARIOSToolStripMenuItem.Text = "TRABAJADORES";
             // 
             // aCTUALIZACIONToolStripMenuItem2
             // 
             this.aCTUALIZACIONToolStripMenuItem2.Name = "aCTUALIZACIONToolStripMenuItem2";
-            this.aCTUALIZACIONToolStripMenuItem2.Size = new System.Drawing.Size(205, 26);
-            this.aCTUALIZACIONToolStripMenuItem2.Text = "ACTUALIZACION";
+            this.aCTUALIZACIONToolStripMenuItem2.Size = new System.Drawing.Size(181, 26);
+            this.aCTUALIZACIONToolStripMenuItem2.Text = "REGISTRO";
+            this.aCTUALIZACIONToolStripMenuItem2.Click += new System.EventHandler(this.aCTUALIZACIONToolStripMenuItem2_Click);
+            // 
+            // USUARIOSTOOL
+            // 
+            this.USUARIOSTOOL.Name = "USUARIOSTOOL";
+            this.USUARIOSTOOL.Size = new System.Drawing.Size(181, 26);
+            this.USUARIOSTOOL.Text = "USUARIOS";
+            this.USUARIOSTOOL.Click += new System.EventHandler(this.USUARIOSTOOL_Click);
             // 
             // cONSULTAToolStripMenuItem2
             // 
             this.cONSULTAToolStripMenuItem2.Name = "cONSULTAToolStripMenuItem2";
-            this.cONSULTAToolStripMenuItem2.Size = new System.Drawing.Size(205, 26);
+            this.cONSULTAToolStripMenuItem2.Size = new System.Drawing.Size(181, 26);
             this.cONSULTAToolStripMenuItem2.Text = "CONSULTA";
             // 
             // rEPORTESToolStripMenuItem
             // 
             this.rEPORTESToolStripMenuItem.Image = global::latin_lab.Properties.Resources.Product_sale_report_icon;
             this.rEPORTESToolStripMenuItem.Name = "rEPORTESToolStripMenuItem";
-            this.rEPORTESToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.rEPORTESToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
             this.rEPORTESToolStripMenuItem.Text = "REPORTES";
+            // 
+            // eMPRESASToolStripMenuItem
+            // 
+            this.eMPRESASToolStripMenuItem.Name = "eMPRESASToolStripMenuItem";
+            this.eMPRESASToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.eMPRESASToolStripMenuItem.Text = "EMPRESAS";
             // 
             // cONFIGURACIONESToolStripMenuItem
             // 
@@ -319,6 +321,7 @@ namespace latin_lab
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "frmMain";
             this.Text = "LATIN LAB";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -334,6 +337,21 @@ namespace latin_lab
         private void TARIFARIOTOOL_Click(object sender, EventArgs e)
         {
             new frmTarifario().Show();
+        }
+
+        private void EXAMENESTOOL_Click(object sender, EventArgs e)
+        {
+            new frmSolicitudExamen().Show();
+        }
+
+        private void USUARIOSTOOL_Click(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void aCTUALIZACIONToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            new frmTrabajador().Show();
         }
     }
 }
