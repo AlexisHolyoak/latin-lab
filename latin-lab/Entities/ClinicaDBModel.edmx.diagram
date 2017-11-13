@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9a88bc347c284abcb1a78a0d4c16bfe7" Name="Diagram1">
+        <EntityTypeShape EntityType="ClinicaDBModel.Areas" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Clases" Width="1.5" PointX="1.5" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Cpts" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Departamentos" Width="1.5" PointX="1.5" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Descuentos" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Distritos" Width="1.5" PointX="1.5" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Egresos" Width="1.5" PointX="8.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Empresas" Width="1.5" PointX="3.75" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Incentivos" Width="1.5" PointX="11.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Ingresos" Width="1.5" PointX="8.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Muestras" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Pacientes" Width="1.5" PointX="6" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Personas" Width="1.5" PointX="3.75" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Provincias" Width="1.5" PointX="1.5" PointY="28.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.RazonesFinancieras" Width="1.5" PointX="6" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Roles" Width="1.5" PointX="3.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Servicios" Width="1.5" PointX="3" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.SubClases" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Sueldos" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Tarifas" Width="1.5" PointX="5.25" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.TipoAydDiags" Width="1.5" PointX="0.75" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.TiposTrabajador" Width="1.5" PointX="3.75" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Trabajadores" Width="1.5" PointX="6" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.UnidadesMedida" Width="1.5" PointX="0.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.Usuarios" Width="1.5" PointX="8.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.TrabajadorDescuentos" Width="1.5" PointX="10.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicaDBModel.TrabajadorIncentivo" Width="1.5" PointX="13.5" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Servicios__idAre__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Trabajado__idAre__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__SubClases__idCla__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Servicios__idCpt__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Provincia__idDep__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Trabajado__idDes__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Distritos__idPro__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Empresas__idDist__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Personas__idDist__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Egresos__idRazon__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Pacientes__idEmp__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Trabajado__idInc__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Ingresos__idRazo__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Pacientes__idPer__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Trabajado__idPer__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Sueldos__idRazon__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Servicios__idSub__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Servicios__idTip__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Servicios__idUni__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Tarifas__idServi__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Sueldos__idTraba__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Trabajado__idSue__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Trabajado__idSue__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Trabajado__idTip__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Trabajado__idTra__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Trabajado__idTra__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.FK__Usuarios__idTrab__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.MuestrasServicios" ManuallyRouted="false" />
+        <AssociationConnector Association="ClinicaDBModel.TrabajadorRol" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

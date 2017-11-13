@@ -54,25 +54,100 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClinicaDBModel.Context.cs">
+    <Compile Include="Entities\Areas.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Clases.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ClinicaDBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ClinicaDBModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ClinicaDBModel.cs">
+    <Compile Include="Entities\ClinicaDBModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ClinicaDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ClinicaDBModel.Designer.cs">
+    <Compile Include="Entities\ClinicaDBModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ClinicaDBModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Departamentos.cs">
+    <Compile Include="Entities\Cpts.cs">
       <DependentUpon>ClinicaDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Distritos.cs">
+    <Compile Include="Entities\Departamentos.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Descuentos.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Distritos.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Egresos.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Empresas.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Incentivos.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Ingresos.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Muestras.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Pacientes.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Personas.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Provincias.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\RazonesFinancieras.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Roles.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Servicios.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SubClases.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Sueldos.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Tarifas.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TipoAydDiags.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TiposTrabajador.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TrabajadorDescuentos.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Trabajadores.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\TrabajadorIncentivo.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UnidadesMedida.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Usuarios.cs">
       <DependentUpon>ClinicaDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="frmBuscarPaciente.cs">
@@ -134,10 +209,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Provincias.cs">
-      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Repository\Repositorio.cs" />
     <Compile Include="Util\Age.cs" />
     <EmbeddedResource Include="frmBuscarPaciente.resx">
       <DependentUpon>frmBuscarPaciente.cs</DependentUpon>
@@ -179,12 +250,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="ClinicaDBModel.edmx">
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Entities\ClinicaDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ClinicaDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.config" />
-    <None Include="ClinicaDBModel.edmx.diagram">
+    <None Include="Entities\ClinicaDBModel.edmx.diagram">
       <DependentUpon>ClinicaDBModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
@@ -277,22 +350,24 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ClinicaDBModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ClinicaDBModel.edmx</DependentUpon>
-      <LastGenOutput>ClinicaDBModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="ClinicaDBModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ClinicaDBModel.edmx</DependentUpon>
-      <LastGenOutput>ClinicaDBModel.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\calendar-empty-icon.png" />
     <None Include="Resources\pan-icon.png" />
     <None Include="Resources\New-file-icon.png" />
     <None Include="Resources\ic_done_black_24dp_1x.png" />
     <None Include="Resources\ic_exit_to_app_black_24dp_1x.png" />
     <None Include="Resources\ic_exit_to_app_black_24dp_2x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entities\ClinicaDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClinicaDBModel.edmx</DependentUpon>
+      <LastGenOutput>ClinicaDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\ClinicaDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ClinicaDBModel.edmx</DependentUpon>
+      <LastGenOutput>ClinicaDBModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

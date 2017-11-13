@@ -33,13 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TXTESTADO = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.CBUBICACIONARCHIVO = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TXTLUGARNAC = new System.Windows.Forms.TextBox();
-            this.TXTIDLUGARNAC = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.TXTEDADDD = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -53,7 +49,6 @@
             this.TXTEDAD = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.DTNACIMIENTO = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.TXTMATERNO = new System.Windows.Forms.TextBox();
@@ -72,7 +67,7 @@
             this.TXTDISTRITO = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.TXTLOCALIDAD = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.CBTIPOLOCALIDAD = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.TXTLOTE = new System.Windows.Forms.TextBox();
             this.TXTMZA = new System.Windows.Forms.TextBox();
@@ -90,7 +85,6 @@
             this.PACIENTESERRORES = new System.Windows.Forms.ErrorProvider(this.components);
             this.label22 = new System.Windows.Forms.Label();
             this.RTOBSERVACIONES = new System.Windows.Forms.RichTextBox();
-            this.BTNNOATENCION = new System.Windows.Forms.Button();
             this.TXTPATERNO = new System.Windows.Forms.TextBox();
             this.CBVETERINARIA = new System.Windows.Forms.CheckBox();
             this.BTNSALIR = new System.Windows.Forms.Button();
@@ -98,6 +92,7 @@
             this.BTNIMPRIMIR = new System.Windows.Forms.Button();
             this.BTNACTUALIZAR = new System.Windows.Forms.Button();
             this.BTNGUARDAR = new System.Windows.Forms.Button();
+            this.BTNNUEVOREG = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -144,13 +139,13 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "ESTADO DEL REGISTRO";
             // 
-            // textBox2
+            // TXTESTADO
             // 
-            this.textBox2.Location = new System.Drawing.Point(602, 5);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 20);
-            this.textBox2.TabIndex = 1;
+            this.TXTESTADO.Location = new System.Drawing.Point(602, 5);
+            this.TXTESTADO.Margin = new System.Windows.Forms.Padding(2);
+            this.TXTESTADO.Name = "TXTESTADO";
+            this.TXTESTADO.Size = new System.Drawing.Size(120, 20);
+            this.TXTESTADO.TabIndex = 1;
             // 
             // label4
             // 
@@ -162,31 +157,9 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "NOMBRES";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(464, 92);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "UBICACION EN EL ARCHIVO";
-            // 
-            // CBUBICACIONARCHIVO
-            // 
-            this.CBUBICACIONARCHIVO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBUBICACIONARCHIVO.FormattingEnabled = true;
-            this.CBUBICACIONARCHIVO.Location = new System.Drawing.Point(619, 86);
-            this.CBUBICACIONARCHIVO.Margin = new System.Windows.Forms.Padding(2);
-            this.CBUBICACIONARCHIVO.Name = "CBUBICACIONARCHIVO";
-            this.CBUBICACIONARCHIVO.Size = new System.Drawing.Size(120, 21);
-            this.CBUBICACIONARCHIVO.TabIndex = 6;
-            // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.TXTLUGARNAC);
-            this.panel1.Controls.Add(this.TXTIDLUGARNAC);
             this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.TXTEDADDD);
             this.panel1.Controls.Add(this.label24);
@@ -200,33 +173,13 @@
             this.panel1.Controls.Add(this.TXTEDAD);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.DTNACIMIENTO);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(9, 121);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(730, 108);
+            this.panel1.Size = new System.Drawing.Size(730, 81);
             this.panel1.TabIndex = 9;
-            // 
-            // TXTLUGARNAC
-            // 
-            this.TXTLUGARNAC.Location = new System.Drawing.Point(206, 53);
-            this.TXTLUGARNAC.Margin = new System.Windows.Forms.Padding(2);
-            this.TXTLUGARNAC.Name = "TXTLUGARNAC";
-            this.TXTLUGARNAC.ReadOnly = true;
-            this.TXTLUGARNAC.Size = new System.Drawing.Size(216, 20);
-            this.TXTLUGARNAC.TabIndex = 9;
-            this.TXTLUGARNAC.TextChanged += new System.EventHandler(this.TXTLUGARNAC_TextChanged);
-            // 
-            // TXTIDLUGARNAC
-            // 
-            this.TXTIDLUGARNAC.Location = new System.Drawing.Point(142, 53);
-            this.TXTIDLUGARNAC.Margin = new System.Windows.Forms.Padding(2);
-            this.TXTIDLUGARNAC.Name = "TXTIDLUGARNAC";
-            this.TXTIDLUGARNAC.ReadOnly = true;
-            this.TXTIDLUGARNAC.Size = new System.Drawing.Size(60, 20);
-            this.TXTIDLUGARNAC.TabIndex = 22;
             // 
             // label25
             // 
@@ -278,7 +231,7 @@
             // 
             // TXTDOCID
             // 
-            this.TXTDOCID.Location = new System.Drawing.Point(218, 76);
+            this.TXTDOCID.Location = new System.Drawing.Point(218, 53);
             this.TXTDOCID.Margin = new System.Windows.Forms.Padding(2);
             this.TXTDOCID.Name = "TXTDOCID";
             this.TXTDOCID.ReadOnly = true;
@@ -290,7 +243,7 @@
             // 
             this.CBDISCAPACITADO.AutoSize = true;
             this.CBDISCAPACITADO.Enabled = false;
-            this.CBDISCAPACITADO.Location = new System.Drawing.Point(616, 81);
+            this.CBDISCAPACITADO.Location = new System.Drawing.Point(616, 58);
             this.CBDISCAPACITADO.Margin = new System.Windows.Forms.Padding(2);
             this.CBDISCAPACITADO.Name = "CBDISCAPACITADO";
             this.CBDISCAPACITADO.Size = new System.Drawing.Size(112, 17);
@@ -309,7 +262,7 @@
             "CARNET DE EXTRANJERIA",
             "PASAPORTE",
             "CEDULA DIPLOMATICA DE IDENTIDAD"});
-            this.CBTIPODOC.Location = new System.Drawing.Point(142, 76);
+            this.CBTIPODOC.Location = new System.Drawing.Point(142, 53);
             this.CBTIPODOC.Margin = new System.Windows.Forms.Padding(2);
             this.CBTIPODOC.Name = "CBTIPODOC";
             this.CBTIPODOC.Size = new System.Drawing.Size(60, 21);
@@ -318,7 +271,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(52, 81);
+            this.label10.Location = new System.Drawing.Point(52, 58);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(77, 13);
@@ -369,16 +322,6 @@
             this.DTNACIMIENTO.TabIndex = 7;
             this.DTNACIMIENTO.ValueChanged += new System.EventHandler(this.DTNACIMIENTO_ValueChanged);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(57, 58);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "LUGAR NAC.";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -426,7 +369,7 @@
             this.panel2.Controls.Add(this.TXTHISTORIA);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.TXTESTADO);
             this.panel2.Location = new System.Drawing.Point(9, 5);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
@@ -459,7 +402,7 @@
             this.panel3.Controls.Add(this.TXTDISTRITO);
             this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.TXTLOCALIDAD);
-            this.panel3.Controls.Add(this.comboBox4);
+            this.panel3.Controls.Add(this.CBTIPOLOCALIDAD);
             this.panel3.Controls.Add(this.label16);
             this.panel3.Controls.Add(this.TXTLOTE);
             this.panel3.Controls.Add(this.TXTMZA);
@@ -471,7 +414,7 @@
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.TXTDIRECCION);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Location = new System.Drawing.Point(9, 235);
+            this.panel3.Location = new System.Drawing.Point(9, 201);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(730, 98);
@@ -588,15 +531,24 @@
             this.TXTLOCALIDAD.Size = new System.Drawing.Size(185, 20);
             this.TXTLOCALIDAD.TabIndex = 16;
             // 
-            // comboBox4
+            // CBTIPOLOCALIDAD
             // 
-            this.comboBox4.Enabled = false;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(142, 48);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(92, 21);
-            this.comboBox4.TabIndex = 11;
+            this.CBTIPOLOCALIDAD.Enabled = false;
+            this.CBTIPOLOCALIDAD.FormattingEnabled = true;
+            this.CBTIPOLOCALIDAD.Items.AddRange(new object[] {
+            "A.A.H.H.",
+            "ASOC.",
+            "CASERIO",
+            "COMITE",
+            "COOPERATIVA",
+            "P.P.J.J.",
+            "URB.",
+            "VILLORIO"});
+            this.CBTIPOLOCALIDAD.Location = new System.Drawing.Point(142, 48);
+            this.CBTIPOLOCALIDAD.Margin = new System.Windows.Forms.Padding(2);
+            this.CBTIPOLOCALIDAD.Name = "CBTIPOLOCALIDAD";
+            this.CBTIPOLOCALIDAD.Size = new System.Drawing.Size(92, 21);
+            this.CBTIPOLOCALIDAD.TabIndex = 11;
             // 
             // label16
             // 
@@ -711,7 +663,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(17, 344);
+            this.label21.Location = new System.Drawing.Point(19, 316);
             this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(126, 13);
@@ -722,7 +674,10 @@
             // 
             this.CBTIPOFINANCIADOR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBTIPOFINANCIADOR.FormattingEnabled = true;
-            this.CBTIPOFINANCIADOR.Location = new System.Drawing.Point(152, 338);
+            this.CBTIPOFINANCIADOR.Items.AddRange(new object[] {
+            "CONVENIO",
+            "PARTICULAR"});
+            this.CBTIPOFINANCIADOR.Location = new System.Drawing.Point(154, 310);
             this.CBTIPOFINANCIADOR.Margin = new System.Windows.Forms.Padding(2);
             this.CBTIPOFINANCIADOR.Name = "CBTIPOFINANCIADOR";
             this.CBTIPOFINANCIADOR.Size = new System.Drawing.Size(193, 21);
@@ -745,7 +700,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(42, 418);
+            this.label22.Location = new System.Drawing.Point(44, 390);
             this.label22.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(98, 13);
@@ -754,23 +709,13 @@
             // 
             // RTOBSERVACIONES
             // 
-            this.RTOBSERVACIONES.Location = new System.Drawing.Point(152, 382);
+            this.RTOBSERVACIONES.Location = new System.Drawing.Point(154, 354);
             this.RTOBSERVACIONES.Margin = new System.Windows.Forms.Padding(2);
             this.RTOBSERVACIONES.Name = "RTOBSERVACIONES";
             this.RTOBSERVACIONES.ReadOnly = true;
-            this.RTOBSERVACIONES.Size = new System.Drawing.Size(269, 51);
+            this.RTOBSERVACIONES.Size = new System.Drawing.Size(478, 51);
             this.RTOBSERVACIONES.TabIndex = 22;
             this.RTOBSERVACIONES.Text = "";
-            // 
-            // BTNNOATENCION
-            // 
-            this.BTNNOATENCION.Location = new System.Drawing.Point(443, 410);
-            this.BTNNOATENCION.Margin = new System.Windows.Forms.Padding(2);
-            this.BTNNOATENCION.Name = "BTNNOATENCION";
-            this.BTNNOATENCION.Size = new System.Drawing.Size(183, 22);
-            this.BTNNOATENCION.TabIndex = 22;
-            this.BTNNOATENCION.Text = "OCURRENCIA DE NO ATENCION";
-            this.BTNNOATENCION.UseVisualStyleBackColor = true;
             // 
             // TXTPATERNO
             // 
@@ -785,7 +730,7 @@
             // 
             this.CBVETERINARIA.AutoSize = true;
             this.CBVETERINARIA.Enabled = false;
-            this.CBVETERINARIA.Location = new System.Drawing.Point(640, 343);
+            this.CBVETERINARIA.Location = new System.Drawing.Point(642, 315);
             this.CBVETERINARIA.Margin = new System.Windows.Forms.Padding(2);
             this.CBVETERINARIA.Name = "CBVETERINARIA";
             this.CBVETERINARIA.Size = new System.Drawing.Size(98, 17);
@@ -797,12 +742,13 @@
             // 
             this.BTNSALIR.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNSALIR.Image = global::latin_lab.Properties.Resources.ic_exit_to_app_black_24dp_1x;
-            this.BTNSALIR.Location = new System.Drawing.Point(634, 454);
+            this.BTNSALIR.Location = new System.Drawing.Point(636, 426);
             this.BTNSALIR.Margin = new System.Windows.Forms.Padding(2);
             this.BTNSALIR.Name = "BTNSALIR";
             this.BTNSALIR.Size = new System.Drawing.Size(96, 41);
             this.BTNSALIR.TabIndex = 29;
             this.BTNSALIR.Text = "SALIR";
+            this.BTNSALIR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BTNSALIR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BTNSALIR.UseVisualStyleBackColor = true;
             this.BTNSALIR.Click += new System.EventHandler(this.BTNSALIR_Click);
@@ -812,39 +758,44 @@
             this.BTNCANCELAR.Enabled = false;
             this.BTNCANCELAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNCANCELAR.Image = global::latin_lab.Properties.Resources.Close_2_icon;
-            this.BTNCANCELAR.Location = new System.Drawing.Point(518, 454);
+            this.BTNCANCELAR.Location = new System.Drawing.Point(520, 426);
             this.BTNCANCELAR.Margin = new System.Windows.Forms.Padding(2);
             this.BTNCANCELAR.Name = "BTNCANCELAR";
             this.BTNCANCELAR.Size = new System.Drawing.Size(112, 41);
             this.BTNCANCELAR.TabIndex = 26;
             this.BTNCANCELAR.Text = "CANCELAR";
+            this.BTNCANCELAR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BTNCANCELAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BTNCANCELAR.UseVisualStyleBackColor = true;
             this.BTNCANCELAR.Click += new System.EventHandler(this.BTNCANCELAR_Click);
             // 
             // BTNIMPRIMIR
             // 
+            this.BTNIMPRIMIR.Enabled = false;
             this.BTNIMPRIMIR.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNIMPRIMIR.Image = global::latin_lab.Properties.Resources.print_icon;
-            this.BTNIMPRIMIR.Location = new System.Drawing.Point(400, 454);
+            this.BTNIMPRIMIR.Location = new System.Drawing.Point(402, 426);
             this.BTNIMPRIMIR.Margin = new System.Windows.Forms.Padding(2);
             this.BTNIMPRIMIR.Name = "BTNIMPRIMIR";
             this.BTNIMPRIMIR.Size = new System.Drawing.Size(111, 41);
             this.BTNIMPRIMIR.TabIndex = 25;
             this.BTNIMPRIMIR.Text = "IMPRIMIR";
+            this.BTNIMPRIMIR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BTNIMPRIMIR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BTNIMPRIMIR.UseVisualStyleBackColor = true;
             // 
             // BTNACTUALIZAR
             // 
+            this.BTNACTUALIZAR.Enabled = false;
             this.BTNACTUALIZAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNACTUALIZAR.Image = global::latin_lab.Properties.Resources.Actions_document_edit_icon;
-            this.BTNACTUALIZAR.Location = new System.Drawing.Point(269, 454);
+            this.BTNACTUALIZAR.Location = new System.Drawing.Point(271, 426);
             this.BTNACTUALIZAR.Margin = new System.Windows.Forms.Padding(2);
             this.BTNACTUALIZAR.Name = "BTNACTUALIZAR";
             this.BTNACTUALIZAR.Size = new System.Drawing.Size(127, 41);
             this.BTNACTUALIZAR.TabIndex = 24;
             this.BTNACTUALIZAR.Text = "ACTUALIZAR";
+            this.BTNACTUALIZAR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BTNACTUALIZAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BTNACTUALIZAR.UseVisualStyleBackColor = true;
             this.BTNACTUALIZAR.Click += new System.EventHandler(this.BTNACTUALIZAR_Click);
@@ -854,21 +805,38 @@
             this.BTNGUARDAR.Enabled = false;
             this.BTNGUARDAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTNGUARDAR.Image = global::latin_lab.Properties.Resources.Save_icon1;
-            this.BTNGUARDAR.Location = new System.Drawing.Point(146, 454);
+            this.BTNGUARDAR.Location = new System.Drawing.Point(148, 426);
             this.BTNGUARDAR.Margin = new System.Windows.Forms.Padding(2);
             this.BTNGUARDAR.Name = "BTNGUARDAR";
             this.BTNGUARDAR.Size = new System.Drawing.Size(119, 41);
             this.BTNGUARDAR.TabIndex = 23;
             this.BTNGUARDAR.Text = "GUARDAR";
+            this.BTNGUARDAR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BTNGUARDAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BTNGUARDAR.UseVisualStyleBackColor = true;
             this.BTNGUARDAR.Click += new System.EventHandler(this.BTNGUARDAR_Click);
+            // 
+            // BTNNUEVOREG
+            // 
+            this.BTNNUEVOREG.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNNUEVOREG.Image = global::latin_lab.Properties.Resources.New_file_icon;
+            this.BTNNUEVOREG.Location = new System.Drawing.Point(25, 426);
+            this.BTNNUEVOREG.Margin = new System.Windows.Forms.Padding(2);
+            this.BTNNUEVOREG.Name = "BTNNUEVOREG";
+            this.BTNNUEVOREG.Size = new System.Drawing.Size(119, 41);
+            this.BTNNUEVOREG.TabIndex = 30;
+            this.BTNNUEVOREG.Text = "NUEVO";
+            this.BTNNUEVOREG.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BTNNUEVOREG.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BTNNUEVOREG.UseVisualStyleBackColor = true;
+            this.BTNNUEVOREG.Click += new System.EventHandler(this.BTNNUEVOREG_Click);
             // 
             // frmPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 505);
+            this.ClientSize = new System.Drawing.Size(755, 479);
+            this.Controls.Add(this.BTNNUEVOREG);
             this.Controls.Add(this.BTNSALIR);
             this.Controls.Add(this.CBVETERINARIA);
             this.Controls.Add(this.TXTPATERNO);
@@ -876,7 +844,6 @@
             this.Controls.Add(this.BTNIMPRIMIR);
             this.Controls.Add(this.BTNACTUALIZAR);
             this.Controls.Add(this.BTNGUARDAR);
-            this.Controls.Add(this.BTNNOATENCION);
             this.Controls.Add(this.RTOBSERVACIONES);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.TXTFRSTNOMBRE);
@@ -887,8 +854,6 @@
             this.Controls.Add(this.TXTSCNDNOMBRE);
             this.Controls.Add(this.TXTMATERNO);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.CBUBICACIONARCHIVO);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -915,17 +880,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox CBUBICACIONARCHIVO;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -939,12 +900,8 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ErrorProvider PACIENTESERRORES;
-        private System.Windows.Forms.Button BTNNOATENCION;
-        private System.Windows.Forms.RichTextBox RTOBSERVACIONES;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button BTNGUARDAR;
-        private System.Windows.Forms.Button BTNIMPRIMIR;
-        private System.Windows.Forms.Button BTNACTUALIZAR;
         private System.Windows.Forms.Button BTNCANCELAR;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
@@ -968,7 +925,7 @@
         public System.Windows.Forms.TextBox TXTNRO;
         public System.Windows.Forms.TextBox TXTDIRECCION;
         public System.Windows.Forms.TextBox TXTLOCALIDAD;
-        public System.Windows.Forms.ComboBox comboBox4;
+        public System.Windows.Forms.ComboBox CBTIPOLOCALIDAD;
         public System.Windows.Forms.TextBox TXTTRABAJO;
         public System.Windows.Forms.TextBox TXTMOVIL;
         public System.Windows.Forms.TextBox TXTTELEFONO;
@@ -976,9 +933,12 @@
         public System.Windows.Forms.TextBox TXTFRSTNOMBRE;
         public System.Windows.Forms.TextBox TXTEDADDD;
         public System.Windows.Forms.TextBox TXTEDADMM;
-        public System.Windows.Forms.TextBox TXTLUGARNAC;
-        public System.Windows.Forms.TextBox TXTIDLUGARNAC;
         public System.Windows.Forms.TextBox TXTPATERNO;
         public System.Windows.Forms.CheckBox CBVETERINARIA;
+        public System.Windows.Forms.RichTextBox RTOBSERVACIONES;
+        private System.Windows.Forms.Button BTNNUEVOREG;
+        public System.Windows.Forms.Button BTNIMPRIMIR;
+        public System.Windows.Forms.Button BTNACTUALIZAR;
+        public System.Windows.Forms.TextBox TXTESTADO;
     }
 }

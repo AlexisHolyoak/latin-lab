@@ -7,23 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace latin_lab
+namespace latin_lab.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Departamentos
+    public partial class Descuentos
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Departamentos()
+        public Descuentos()
         {
-            this.Provincias = new HashSet<Provincias>();
+            this.TrabajadorDescuentos = new HashSet<TrabajadorDescuentos>();
         }
     
-        public int idDepartamento { get; set; }
-        public string nombreDepartamento { get; set; }
+        public int idDescuento { get; set; }
+        public string nombre { get; set; }
+        public int estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Provincias> Provincias { get; set; }
+        public virtual ICollection<TrabajadorDescuentos> TrabajadorDescuentos { get; set; }
     }
 }
