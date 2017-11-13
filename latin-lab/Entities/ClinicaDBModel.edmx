@@ -1,0 +1,2128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ClinicaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Areas">
+          <Key>
+            <PropertyRef Name="idArea" />
+          </Key>
+          <Property Name="idArea" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="300" />
+          <Property Name="breve" Type="varchar" MaxLength="300" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clases">
+          <Key>
+            <PropertyRef Name="idClase" />
+          </Key>
+          <Property Name="idClase" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="300" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cpts">
+          <Key>
+            <PropertyRef Name="idCpt" />
+          </Key>
+          <Property Name="idCpt" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="varchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="Departamentos">
+          <Key>
+            <PropertyRef Name="idDepartamento" />
+          </Key>
+          <Property Name="idDepartamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Descuentos">
+          <Key>
+            <PropertyRef Name="idDescuento" />
+          </Key>
+          <Property Name="idDescuento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="400" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Distritos">
+          <Key>
+            <PropertyRef Name="idDistrito" />
+          </Key>
+          <Property Name="idDistrito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" />
+          <Property Name="idProvincia" Type="int" />
+        </EntityType>
+        <EntityType Name="Egresos">
+          <Key>
+            <PropertyRef Name="idEgreso" />
+          </Key>
+          <Property Name="idEgreso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="observacion" Type="varchar" MaxLength="500" />
+          <Property Name="monto" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="idRazonFinanciera" Type="int" />
+        </EntityType>
+        <EntityType Name="Empresas">
+          <Key>
+            <PropertyRef Name="idEmpresa" />
+          </Key>
+          <Property Name="idEmpresa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="200" />
+          <Property Name="veterinaria" Type="bit" />
+          <Property Name="abreviado" Type="varchar" MaxLength="100" />
+          <Property Name="giroNegocio" Type="varchar" MaxLength="400" />
+          <Property Name="grupo" Type="varchar" MaxLength="150" />
+          <Property Name="contacto" Type="varchar" MaxLength="200" />
+          <Property Name="atencion" Type="varchar" MaxLength="200" />
+          <Property Name="ruc" Type="varchar" MaxLength="20" />
+          <Property Name="fechaConstitucion" Type="datetime" />
+          <Property Name="fechaAniversario" Type="datetime" />
+          <Property Name="cargo" Type="varchar" MaxLength="100" />
+          <Property Name="direccion" Type="varchar" MaxLength="300" />
+          <Property Name="idDistrito" Type="int" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="telefono" Type="varchar" MaxLength="30" />
+          <Property Name="anexo" Type="varchar" MaxLength="30" />
+          <Property Name="fax" Type="varchar" MaxLength="30" />
+          <Property Name="homePage" Type="varchar" MaxLength="100" />
+          <Property Name="observacion" Type="varchar" MaxLength="300" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="nombreUsuario" Type="varchar" MaxLength="200" />
+          <Property Name="fechaCreacion" Type="datetime" />
+          <Property Name="fechaModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Incentivos">
+          <Key>
+            <PropertyRef Name="idIncentivo" />
+          </Key>
+          <Property Name="idIncentivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="400" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ingresos">
+          <Key>
+            <PropertyRef Name="idIngreso" />
+          </Key>
+          <Property Name="idIngreso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="observacion" Type="varchar" MaxLength="500" />
+          <Property Name="monto" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="idRazonFinanciera" Type="int" />
+        </EntityType>
+        <EntityType Name="Muestras">
+          <Key>
+            <PropertyRef Name="idMuestra" />
+          </Key>
+          <Property Name="idMuestra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="200" />
+          <Property Name="descripcion" Type="varchar" MaxLength="400" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ClinicaDB.dbo.MuestrasServicios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="MuestrasServicios">
+          <Key>
+            <PropertyRef Name="idServicio" />
+            <PropertyRef Name="idMuestra" />
+          </Key>
+          <Property Name="idServicio" Type="int" Nullable="false" />
+          <Property Name="idMuestra" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pacientes">
+          <Key>
+            <PropertyRef Name="idPaciente" />
+          </Key>
+          <Property Name="idPaciente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPersona" Type="int" />
+          <Property Name="idEmpresa" Type="int" />
+          <Property Name="numeroHistoria" Type="varchar" MaxLength="6" StoreGeneratedPattern="Computed" />
+          <Property Name="tipoFinanciador" Type="varchar" MaxLength="100" />
+          <Property Name="veterinaria" Type="bit" />
+          <Property Name="observacion" Type="varchar" MaxLength="300" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="nombreUsuario" Type="varchar" MaxLength="200" />
+          <Property Name="fechaCreacion" Type="datetime" />
+          <Property Name="fechaModificacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Personas">
+          <Key>
+            <PropertyRef Name="idPersona" />
+          </Key>
+          <Property Name="idPersona" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="prNombre" Type="varchar" MaxLength="150" />
+          <Property Name="sgNombre" Type="varchar" MaxLength="150" />
+          <Property Name="aPaterno" Type="varchar" MaxLength="150" />
+          <Property Name="aMaterno" Type="varchar" MaxLength="150" />
+          <Property Name="fechaNacimiento" Type="datetime" />
+          <Property Name="sexo" Type="varchar" MaxLength="20" />
+          <Property Name="tipoDocumento" Type="varchar" MaxLength="100" />
+          <Property Name="numDocumento" Type="varchar" MaxLength="100" />
+          <Property Name="direccion" Type="varchar" MaxLength="300" />
+          <Property Name="numDireccion" Type="varchar" MaxLength="50" />
+          <Property Name="intDireccion" Type="varchar" MaxLength="50" />
+          <Property Name="mzaDireccion" Type="varchar" MaxLength="50" />
+          <Property Name="lteDireccion" Type="varchar" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" MaxLength="8" />
+          <Property Name="celular" Type="varchar" MaxLength="9" />
+          <Property Name="trabajo" Type="varchar" MaxLength="50" />
+          <Property Name="discapacitado" Type="bit" />
+          <Property Name="tipoLocalidad" Type="varchar" MaxLength="100" />
+          <Property Name="nombreLocalidad" Type="varchar" MaxLength="100" />
+          <Property Name="idDistrito" Type="int" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Provincias">
+          <Key>
+            <PropertyRef Name="idProvincia" />
+          </Key>
+          <Property Name="idProvincia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" />
+          <Property Name="idDepartamento" Type="int" />
+        </EntityType>
+        <EntityType Name="RazonesFinancieras">
+          <Key>
+            <PropertyRef Name="idRazonFinanciera" />
+          </Key>
+          <Property Name="idRazonFinanciera" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="500" />
+          <Property Name="tipo" Type="varchar" MaxLength="90" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreRol" Type="varchar" MaxLength="500" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Servicios">
+          <Key>
+            <PropertyRef Name="idServicio" />
+          </Key>
+          <Property Name="idServicio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="200" />
+          <Property Name="descripcion" Type="varchar" MaxLength="200" />
+          <Property Name="breve" Type="varchar" MaxLength="200" />
+          <Property Name="idSubClase" Type="int" />
+          <Property Name="idUnidadMedida" Type="int" />
+          <Property Name="idArea" Type="int" />
+          <Property Name="importeBase" Type="varchar" MaxLength="10" />
+          <Property Name="veterinaria" Type="bit" />
+          <Property Name="categSocial" Type="bit" />
+          <Property Name="categTemporal" Type="bit" />
+          <Property Name="tarifaLibre" Type="bit" />
+          <Property Name="igv" Type="bit" />
+          <Property Name="idTipoAydDiag" Type="int" />
+          <Property Name="idCpt" Type="int" />
+          <Property Name="observacion" Type="varchar" MaxLength="400" />
+          <Property Name="tipoServicio" Type="varchar" MaxLength="200" />
+          <Property Name="estado" Type="int" />
+        </EntityType>
+        <EntityType Name="SubClases">
+          <Key>
+            <PropertyRef Name="idSubClase" />
+          </Key>
+          <Property Name="idSubClase" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idClase" Type="int" />
+          <Property Name="nombre" Type="varchar" MaxLength="300" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sueldos">
+          <Key>
+            <PropertyRef Name="idSueldo" />
+          </Key>
+          <Property Name="idSueldo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idTrabajador" Type="int" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="montoBase" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="cantidadDeServicios" Type="int" />
+          <Property Name="montoTotalPorServicios" Type="decimal" Precision="10" Scale="4" />
+          <Property Name="estadoDePago" Type="int" Nullable="false" />
+          <Property Name="idRazonFinanciera" Type="int" />
+        </EntityType>
+        <EntityType Name="Tarifas">
+          <Key>
+            <PropertyRef Name="idTarifa" />
+          </Key>
+          <Property Name="idTarifa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idServicio" Type="int" />
+          <Property Name="tipoFinanciador" Type="varchar" MaxLength="100" />
+          <Property Name="precioCalculado" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="precioExcepcion" Type="decimal" Precision="8" Scale="2" />
+          <Property Name="tarifa" Type="varchar" MaxLength="200" />
+          <Property Name="observacion" Type="varchar" MaxLength="400" />
+          <Property Name="estado" Type="int" />
+        </EntityType>
+        <EntityType Name="TipoAydDiags">
+          <Key>
+            <PropertyRef Name="idTipoAydDiag" />
+          </Key>
+          <Property Name="idTipoAydDiag" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="500" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposTrabajador">
+          <Key>
+            <PropertyRef Name="idTipoTrabajador" />
+          </Key>
+          <Property Name="idTipoTrabajador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="200" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ClinicaDB.dbo.TrabajadorDescuentos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TrabajadorDescuentos">
+          <Key>
+            <PropertyRef Name="estado" />
+          </Key>
+          <Property Name="idTrabajador" Type="int" />
+          <Property Name="monto" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="idDescuento" Type="int" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="idSueldo" Type="int" />
+          <Property Name="observacion" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Trabajadores">
+          <Key>
+            <PropertyRef Name="idTrabajador" />
+          </Key>
+          <Property Name="idTrabajador" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPersona" Type="int" />
+          <Property Name="idTipoTrabajador" Type="int" />
+          <Property Name="idArea" Type="int" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="nombreUsuario" Type="varchar" MaxLength="200" />
+          <Property Name="fechaCreacion" Type="datetime" />
+          <Property Name="fechaModificacion" Type="datetime" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ClinicaDB.dbo.TrabajadorIncentivo' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TrabajadorIncentivo">
+          <Key>
+            <PropertyRef Name="estado" />
+          </Key>
+          <Property Name="idTrabajador" Type="int" />
+          <Property Name="monto" Type="decimal" Precision="10" Scale="5" />
+          <Property Name="idIncentivo" Type="int" />
+          <Property Name="estado" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="datetime" />
+          <Property Name="idSueldo" Type="int" />
+          <Property Name="observacion" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ClinicaDB.dbo.TrabajadorRol' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="TrabajadorRol">
+          <Key>
+            <PropertyRef Name="idTrabajador" />
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idTrabajador" Type="int" Nullable="false" />
+          <Property Name="idRol" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UnidadesMedida">
+          <Key>
+            <PropertyRef Name="idUnidadMedida" />
+          </Key>
+          <Property Name="idUnidadMedida" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigo" Type="varchar" MaxLength="100" />
+          <Property Name="descripcion" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idTrabajador" Type="int" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="clave" Type="varchar" MaxLength="70" />
+          <Property Name="estado" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Distritos__idPro__15502E78">
+          <End Role="Provincias" Type="Self.Provincias" Multiplicity="0..1" />
+          <End Role="Distritos" Type="Self.Distritos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincias">
+              <PropertyRef Name="idProvincia" />
+            </Principal>
+            <Dependent Role="Distritos">
+              <PropertyRef Name="idProvincia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Egresos__idRazon__5812160E">
+          <End Role="RazonesFinancieras" Type="Self.RazonesFinancieras" Multiplicity="0..1" />
+          <End Role="Egresos" Type="Self.Egresos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RazonesFinancieras">
+              <PropertyRef Name="idRazonFinanciera" />
+            </Principal>
+            <Dependent Role="Egresos">
+              <PropertyRef Name="idRazonFinanciera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empresas__idDist__1B0907CE">
+          <End Role="Distritos" Type="Self.Distritos" Multiplicity="0..1" />
+          <End Role="Empresas" Type="Self.Empresas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distritos">
+              <PropertyRef Name="idDistrito" />
+            </Principal>
+            <Dependent Role="Empresas">
+              <PropertyRef Name="idDistrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ingresos__idRazo__5AEE82B9">
+          <End Role="RazonesFinancieras" Type="Self.RazonesFinancieras" Multiplicity="0..1" />
+          <End Role="Ingresos" Type="Self.Ingresos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RazonesFinancieras">
+              <PropertyRef Name="idRazonFinanciera" />
+            </Principal>
+            <Dependent Role="Ingresos">
+              <PropertyRef Name="idRazonFinanciera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MuestrasS__idMue__3D5E1FD2">
+          <End Role="Muestras" Type="Self.Muestras" Multiplicity="1" />
+          <End Role="MuestrasServicios" Type="Self.MuestrasServicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Muestras">
+              <PropertyRef Name="idMuestra" />
+            </Principal>
+            <Dependent Role="MuestrasServicios">
+              <PropertyRef Name="idMuestra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MuestrasS__idSer__3C69FB99">
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="1" />
+          <End Role="MuestrasServicios" Type="Self.MuestrasServicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Servicios">
+              <PropertyRef Name="idServicio" />
+            </Principal>
+            <Dependent Role="MuestrasServicios">
+              <PropertyRef Name="idServicio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pacientes__idEmp__1ED998B2">
+          <End Role="Empresas" Type="Self.Empresas" Multiplicity="0..1" />
+          <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="idEmpresa" />
+            </Principal>
+            <Dependent Role="Pacientes">
+              <PropertyRef Name="idEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pacientes__idPer__1DE57479">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="0..1" />
+          <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="idPersona" />
+            </Principal>
+            <Dependent Role="Pacientes">
+              <PropertyRef Name="idPersona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Personas__idDist__182C9B23">
+          <End Role="Distritos" Type="Self.Distritos" Multiplicity="0..1" />
+          <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distritos">
+              <PropertyRef Name="idDistrito" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="idDistrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Provincia__idDep__1273C1CD">
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="0..1" />
+          <End Role="Provincias" Type="Self.Provincias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamentos">
+              <PropertyRef Name="idDepartamento" />
+            </Principal>
+            <Dependent Role="Provincias">
+              <PropertyRef Name="idDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__idAre__38996AB5">
+          <End Role="Areas" Type="Self.Areas" Multiplicity="0..1" />
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="idArea" />
+            </Principal>
+            <Dependent Role="Servicios">
+              <PropertyRef Name="idArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__idCpt__3A81B327">
+          <End Role="Cpts" Type="Self.Cpts" Multiplicity="0..1" />
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cpts">
+              <PropertyRef Name="idCpt" />
+            </Principal>
+            <Dependent Role="Servicios">
+              <PropertyRef Name="idCpt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__idSub__36B12243">
+          <End Role="SubClases" Type="Self.SubClases" Multiplicity="0..1" />
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubClases">
+              <PropertyRef Name="idSubClase" />
+            </Principal>
+            <Dependent Role="Servicios">
+              <PropertyRef Name="idSubClase" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__idTip__398D8EEE">
+          <End Role="TipoAydDiags" Type="Self.TipoAydDiags" Multiplicity="0..1" />
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoAydDiags">
+              <PropertyRef Name="idTipoAydDiag" />
+            </Principal>
+            <Dependent Role="Servicios">
+              <PropertyRef Name="idTipoAydDiag" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__idUni__37A5467C">
+          <End Role="UnidadesMedida" Type="Self.UnidadesMedida" Multiplicity="0..1" />
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadesMedida">
+              <PropertyRef Name="idUnidadMedida" />
+            </Principal>
+            <Dependent Role="Servicios">
+              <PropertyRef Name="idUnidadMedida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SubClases__idCla__2E1BDC42">
+          <End Role="Clases" Type="Self.Clases" Multiplicity="0..1" />
+          <End Role="SubClases" Type="Self.SubClases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clases">
+              <PropertyRef Name="idClase" />
+            </Principal>
+            <Dependent Role="SubClases">
+              <PropertyRef Name="idClase" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sueldos__idRazon__4D94879B">
+          <End Role="RazonesFinancieras" Type="Self.RazonesFinancieras" Multiplicity="0..1" />
+          <End Role="Sueldos" Type="Self.Sueldos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RazonesFinancieras">
+              <PropertyRef Name="idRazonFinanciera" />
+            </Principal>
+            <Dependent Role="Sueldos">
+              <PropertyRef Name="idRazonFinanciera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sueldos__idTraba__4CA06362">
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="0..1" />
+          <End Role="Sueldos" Type="Self.Sueldos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trabajadores">
+              <PropertyRef Name="idTrabajador" />
+            </Principal>
+            <Dependent Role="Sueldos">
+              <PropertyRef Name="idTrabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tarifas__idServi__403A8C7D">
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="0..1" />
+          <End Role="Tarifas" Type="Self.Tarifas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Servicios">
+              <PropertyRef Name="idServicio" />
+            </Principal>
+            <Dependent Role="Tarifas">
+              <PropertyRef Name="idServicio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idAre__276EDEB3">
+          <End Role="Areas" Type="Self.Areas" Multiplicity="0..1" />
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="idArea" />
+            </Principal>
+            <Dependent Role="Trabajadores">
+              <PropertyRef Name="idArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idDes__5070F446">
+          <End Role="Descuentos" Type="Self.Descuentos" Multiplicity="0..1" />
+          <End Role="TrabajadorDescuentos" Type="Self.TrabajadorDescuentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Descuentos">
+              <PropertyRef Name="idDescuento" />
+            </Principal>
+            <Dependent Role="TrabajadorDescuentos">
+              <PropertyRef Name="idDescuento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idInc__5441852A">
+          <End Role="Incentivos" Type="Self.Incentivos" Multiplicity="0..1" />
+          <End Role="TrabajadorIncentivo" Type="Self.TrabajadorIncentivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Incentivos">
+              <PropertyRef Name="idIncentivo" />
+            </Principal>
+            <Dependent Role="TrabajadorIncentivo">
+              <PropertyRef Name="idIncentivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idPer__25869641">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="0..1" />
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="idPersona" />
+            </Principal>
+            <Dependent Role="Trabajadores">
+              <PropertyRef Name="idPersona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idRol__5FB337D6">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="TrabajadorRol" Type="Self.TrabajadorRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="TrabajadorRol">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idSue__5165187F">
+          <End Role="Sueldos" Type="Self.Sueldos" Multiplicity="0..1" />
+          <End Role="TrabajadorDescuentos" Type="Self.TrabajadorDescuentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sueldos">
+              <PropertyRef Name="idSueldo" />
+            </Principal>
+            <Dependent Role="TrabajadorDescuentos">
+              <PropertyRef Name="idSueldo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idSue__5535A963">
+          <End Role="Sueldos" Type="Self.Sueldos" Multiplicity="0..1" />
+          <End Role="TrabajadorIncentivo" Type="Self.TrabajadorIncentivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sueldos">
+              <PropertyRef Name="idSueldo" />
+            </Principal>
+            <Dependent Role="TrabajadorIncentivo">
+              <PropertyRef Name="idSueldo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idTip__267ABA7A">
+          <End Role="TiposTrabajador" Type="Self.TiposTrabajador" Multiplicity="0..1" />
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposTrabajador">
+              <PropertyRef Name="idTipoTrabajador" />
+            </Principal>
+            <Dependent Role="Trabajadores">
+              <PropertyRef Name="idTipoTrabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idTra__4F7CD00D">
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="0..1" />
+          <End Role="TrabajadorDescuentos" Type="Self.TrabajadorDescuentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trabajadores">
+              <PropertyRef Name="idTrabajador" />
+            </Principal>
+            <Dependent Role="TrabajadorDescuentos">
+              <PropertyRef Name="idTrabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idTra__534D60F1">
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="0..1" />
+          <End Role="TrabajadorIncentivo" Type="Self.TrabajadorIncentivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trabajadores">
+              <PropertyRef Name="idTrabajador" />
+            </Principal>
+            <Dependent Role="TrabajadorIncentivo">
+              <PropertyRef Name="idTrabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idTra__5EBF139D">
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="1" />
+          <End Role="TrabajadorRol" Type="Self.TrabajadorRol" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trabajadores">
+              <PropertyRef Name="idTrabajador" />
+            </Principal>
+            <Dependent Role="TrabajadorRol">
+              <PropertyRef Name="idTrabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuarios__idTrab__440B1D61">
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="0..1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trabajadores">
+              <PropertyRef Name="idTrabajador" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="idTrabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClinicaDBModelStoreContainer">
+          <EntitySet Name="Areas" EntityType="Self.Areas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clases" EntityType="Self.Clases" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cpts" EntityType="Self.Cpts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departamentos" EntityType="Self.Departamentos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Descuentos" EntityType="Self.Descuentos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Distritos" EntityType="Self.Distritos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Egresos" EntityType="Self.Egresos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empresas" EntityType="Self.Empresas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Incentivos" EntityType="Self.Incentivos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ingresos" EntityType="Self.Ingresos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Muestras" EntityType="Self.Muestras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pacientes" EntityType="Self.Pacientes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personas" EntityType="Self.Personas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provincias" EntityType="Self.Provincias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RazonesFinancieras" EntityType="Self.RazonesFinancieras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Servicios" EntityType="Self.Servicios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubClases" EntityType="Self.SubClases" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sueldos" EntityType="Self.Sueldos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tarifas" EntityType="Self.Tarifas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoAydDiags" EntityType="Self.TipoAydDiags" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TiposTrabajador" EntityType="Self.TiposTrabajador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Trabajadores" EntityType="Self.Trabajadores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UnidadesMedida" EntityType="Self.UnidadesMedida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MuestrasServicios" EntityType="Self.MuestrasServicios" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MuestrasServicios].[idServicio] AS [idServicio], 
+    [MuestrasServicios].[idMuestra] AS [idMuestra]
+    FROM [dbo].[MuestrasServicios] AS [MuestrasServicios]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TrabajadorDescuentos" EntityType="Self.TrabajadorDescuentos" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TrabajadorDescuentos].[idTrabajador] AS [idTrabajador], 
+    [TrabajadorDescuentos].[monto] AS [monto], 
+    [TrabajadorDescuentos].[idDescuento] AS [idDescuento], 
+    [TrabajadorDescuentos].[estado] AS [estado], 
+    [TrabajadorDescuentos].[fecha] AS [fecha], 
+    [TrabajadorDescuentos].[idSueldo] AS [idSueldo], 
+    [TrabajadorDescuentos].[observacion] AS [observacion]
+    FROM [dbo].[TrabajadorDescuentos] AS [TrabajadorDescuentos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TrabajadorIncentivo" EntityType="Self.TrabajadorIncentivo" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TrabajadorIncentivo].[idTrabajador] AS [idTrabajador], 
+    [TrabajadorIncentivo].[monto] AS [monto], 
+    [TrabajadorIncentivo].[idIncentivo] AS [idIncentivo], 
+    [TrabajadorIncentivo].[estado] AS [estado], 
+    [TrabajadorIncentivo].[fecha] AS [fecha], 
+    [TrabajadorIncentivo].[idSueldo] AS [idSueldo], 
+    [TrabajadorIncentivo].[observacion] AS [observacion]
+    FROM [dbo].[TrabajadorIncentivo] AS [TrabajadorIncentivo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TrabajadorRol" EntityType="Self.TrabajadorRol" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TrabajadorRol].[idTrabajador] AS [idTrabajador], 
+    [TrabajadorRol].[idRol] AS [idRol]
+    FROM [dbo].[TrabajadorRol] AS [TrabajadorRol]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Distritos__idPro__15502E78" Association="Self.FK__Distritos__idPro__15502E78">
+            <End Role="Provincias" EntitySet="Provincias" />
+            <End Role="Distritos" EntitySet="Distritos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Egresos__idRazon__5812160E" Association="Self.FK__Egresos__idRazon__5812160E">
+            <End Role="RazonesFinancieras" EntitySet="RazonesFinancieras" />
+            <End Role="Egresos" EntitySet="Egresos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empresas__idDist__1B0907CE" Association="Self.FK__Empresas__idDist__1B0907CE">
+            <End Role="Distritos" EntitySet="Distritos" />
+            <End Role="Empresas" EntitySet="Empresas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ingresos__idRazo__5AEE82B9" Association="Self.FK__Ingresos__idRazo__5AEE82B9">
+            <End Role="RazonesFinancieras" EntitySet="RazonesFinancieras" />
+            <End Role="Ingresos" EntitySet="Ingresos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MuestrasS__idMue__3D5E1FD2" Association="Self.FK__MuestrasS__idMue__3D5E1FD2">
+            <End Role="Muestras" EntitySet="Muestras" />
+            <End Role="MuestrasServicios" EntitySet="MuestrasServicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MuestrasS__idSer__3C69FB99" Association="Self.FK__MuestrasS__idSer__3C69FB99">
+            <End Role="Servicios" EntitySet="Servicios" />
+            <End Role="MuestrasServicios" EntitySet="MuestrasServicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pacientes__idEmp__1ED998B2" Association="Self.FK__Pacientes__idEmp__1ED998B2">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Pacientes" EntitySet="Pacientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pacientes__idPer__1DE57479" Association="Self.FK__Pacientes__idPer__1DE57479">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Pacientes" EntitySet="Pacientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Personas__idDist__182C9B23" Association="Self.FK__Personas__idDist__182C9B23">
+            <End Role="Distritos" EntitySet="Distritos" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Provincia__idDep__1273C1CD" Association="Self.FK__Provincia__idDep__1273C1CD">
+            <End Role="Departamentos" EntitySet="Departamentos" />
+            <End Role="Provincias" EntitySet="Provincias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__idAre__38996AB5" Association="Self.FK__Servicios__idAre__38996AB5">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="Servicios" EntitySet="Servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__idCpt__3A81B327" Association="Self.FK__Servicios__idCpt__3A81B327">
+            <End Role="Cpts" EntitySet="Cpts" />
+            <End Role="Servicios" EntitySet="Servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__idSub__36B12243" Association="Self.FK__Servicios__idSub__36B12243">
+            <End Role="SubClases" EntitySet="SubClases" />
+            <End Role="Servicios" EntitySet="Servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__idTip__398D8EEE" Association="Self.FK__Servicios__idTip__398D8EEE">
+            <End Role="TipoAydDiags" EntitySet="TipoAydDiags" />
+            <End Role="Servicios" EntitySet="Servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__idUni__37A5467C" Association="Self.FK__Servicios__idUni__37A5467C">
+            <End Role="UnidadesMedida" EntitySet="UnidadesMedida" />
+            <End Role="Servicios" EntitySet="Servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SubClases__idCla__2E1BDC42" Association="Self.FK__SubClases__idCla__2E1BDC42">
+            <End Role="Clases" EntitySet="Clases" />
+            <End Role="SubClases" EntitySet="SubClases" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sueldos__idRazon__4D94879B" Association="Self.FK__Sueldos__idRazon__4D94879B">
+            <End Role="RazonesFinancieras" EntitySet="RazonesFinancieras" />
+            <End Role="Sueldos" EntitySet="Sueldos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sueldos__idTraba__4CA06362" Association="Self.FK__Sueldos__idTraba__4CA06362">
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+            <End Role="Sueldos" EntitySet="Sueldos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tarifas__idServi__403A8C7D" Association="Self.FK__Tarifas__idServi__403A8C7D">
+            <End Role="Servicios" EntitySet="Servicios" />
+            <End Role="Tarifas" EntitySet="Tarifas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idAre__276EDEB3" Association="Self.FK__Trabajado__idAre__276EDEB3">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idDes__5070F446" Association="Self.FK__Trabajado__idDes__5070F446">
+            <End Role="Descuentos" EntitySet="Descuentos" />
+            <End Role="TrabajadorDescuentos" EntitySet="TrabajadorDescuentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idInc__5441852A" Association="Self.FK__Trabajado__idInc__5441852A">
+            <End Role="Incentivos" EntitySet="Incentivos" />
+            <End Role="TrabajadorIncentivo" EntitySet="TrabajadorIncentivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idPer__25869641" Association="Self.FK__Trabajado__idPer__25869641">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idRol__5FB337D6" Association="Self.FK__Trabajado__idRol__5FB337D6">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="TrabajadorRol" EntitySet="TrabajadorRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idSue__5165187F" Association="Self.FK__Trabajado__idSue__5165187F">
+            <End Role="Sueldos" EntitySet="Sueldos" />
+            <End Role="TrabajadorDescuentos" EntitySet="TrabajadorDescuentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idSue__5535A963" Association="Self.FK__Trabajado__idSue__5535A963">
+            <End Role="Sueldos" EntitySet="Sueldos" />
+            <End Role="TrabajadorIncentivo" EntitySet="TrabajadorIncentivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idTip__267ABA7A" Association="Self.FK__Trabajado__idTip__267ABA7A">
+            <End Role="TiposTrabajador" EntitySet="TiposTrabajador" />
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idTra__4F7CD00D" Association="Self.FK__Trabajado__idTra__4F7CD00D">
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+            <End Role="TrabajadorDescuentos" EntitySet="TrabajadorDescuentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idTra__534D60F1" Association="Self.FK__Trabajado__idTra__534D60F1">
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+            <End Role="TrabajadorIncentivo" EntitySet="TrabajadorIncentivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idTra__5EBF139D" Association="Self.FK__Trabajado__idTra__5EBF139D">
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+            <End Role="TrabajadorRol" EntitySet="TrabajadorRol" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuarios__idTrab__440B1D61" Association="Self.FK__Usuarios__idTrab__440B1D61">
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClinicaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Areas">
+          <Key>
+            <PropertyRef Name="idArea" />
+          </Key>
+          <Property Name="idArea" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="breve" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Servicios" Relationship="Self.FK__Servicios__idAre__38996AB5" FromRole="Areas" ToRole="Servicios" />
+          <NavigationProperty Name="Trabajadores" Relationship="Self.FK__Trabajado__idAre__276EDEB3" FromRole="Areas" ToRole="Trabajadores" />
+        </EntityType>
+        <EntityType Name="Clases">
+          <Key>
+            <PropertyRef Name="idClase" />
+          </Key>
+          <Property Name="idClase" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SubClases" Relationship="Self.FK__SubClases__idCla__2E1BDC42" FromRole="Clases" ToRole="SubClases" />
+        </EntityType>
+        <EntityType Name="Cpts">
+          <Key>
+            <PropertyRef Name="idCpt" />
+          </Key>
+          <Property Name="idCpt" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Servicios" Relationship="Self.FK__Servicios__idCpt__3A81B327" FromRole="Cpts" ToRole="Servicios" />
+        </EntityType>
+        <EntityType Name="Departamentos">
+          <Key>
+            <PropertyRef Name="idDepartamento" />
+          </Key>
+          <Property Name="idDepartamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Provincias" Relationship="Self.FK__Provincia__idDep__1273C1CD" FromRole="Departamentos" ToRole="Provincias" />
+        </EntityType>
+        <EntityType Name="Descuentos">
+          <Key>
+            <PropertyRef Name="idDescuento" />
+          </Key>
+          <Property Name="idDescuento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TrabajadorDescuentos" Relationship="Self.FK__Trabajado__idDes__5070F446" FromRole="Descuentos" ToRole="TrabajadorDescuentos" />
+        </EntityType>
+        <EntityType Name="Distritos">
+          <Key>
+            <PropertyRef Name="idDistrito" />
+          </Key>
+          <Property Name="idDistrito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="idProvincia" Type="Int32" />
+          <NavigationProperty Name="Provincias" Relationship="Self.FK__Distritos__idPro__15502E78" FromRole="Distritos" ToRole="Provincias" />
+          <NavigationProperty Name="Empresas" Relationship="Self.FK__Empresas__idDist__1B0907CE" FromRole="Distritos" ToRole="Empresas" />
+          <NavigationProperty Name="Personas" Relationship="Self.FK__Personas__idDist__182C9B23" FromRole="Distritos" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="Egresos">
+          <Key>
+            <PropertyRef Name="idEgreso" />
+          </Key>
+          <Property Name="idEgreso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="monto" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="idRazonFinanciera" Type="Int32" />
+          <NavigationProperty Name="RazonesFinancieras" Relationship="Self.FK__Egresos__idRazon__5812160E" FromRole="Egresos" ToRole="RazonesFinancieras" />
+        </EntityType>
+        <EntityType Name="Empresas">
+          <Key>
+            <PropertyRef Name="idEmpresa" />
+          </Key>
+          <Property Name="idEmpresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="veterinaria" Type="Boolean" />
+          <Property Name="abreviado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="giroNegocio" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="grupo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="contacto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="atencion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ruc" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fechaConstitucion" Type="DateTime" Precision="3" />
+          <Property Name="fechaAniversario" Type="DateTime" Precision="3" />
+          <Property Name="cargo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="direccion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="idDistrito" Type="Int32" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="anexo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="fax" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="homePage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="observacion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <Property Name="nombreUsuario" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Distritos" Relationship="Self.FK__Empresas__idDist__1B0907CE" FromRole="Empresas" ToRole="Distritos" />
+          <NavigationProperty Name="Pacientes" Relationship="Self.FK__Pacientes__idEmp__1ED998B2" FromRole="Empresas" ToRole="Pacientes" />
+        </EntityType>
+        <EntityType Name="Incentivos">
+          <Key>
+            <PropertyRef Name="idIncentivo" />
+          </Key>
+          <Property Name="idIncentivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TrabajadorIncentivo" Relationship="Self.FK__Trabajado__idInc__5441852A" FromRole="Incentivos" ToRole="TrabajadorIncentivo" />
+        </EntityType>
+        <EntityType Name="Ingresos">
+          <Key>
+            <PropertyRef Name="idIngreso" />
+          </Key>
+          <Property Name="idIngreso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="monto" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="idRazonFinanciera" Type="Int32" />
+          <NavigationProperty Name="RazonesFinancieras" Relationship="Self.FK__Ingresos__idRazo__5AEE82B9" FromRole="Ingresos" ToRole="RazonesFinancieras" />
+        </EntityType>
+        <EntityType Name="Muestras">
+          <Key>
+            <PropertyRef Name="idMuestra" />
+          </Key>
+          <Property Name="idMuestra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Servicios" Relationship="Self.MuestrasServicios" FromRole="Muestras" ToRole="Servicios" />
+        </EntityType>
+        <EntityType Name="Pacientes">
+          <Key>
+            <PropertyRef Name="idPaciente" />
+          </Key>
+          <Property Name="idPaciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPersona" Type="Int32" />
+          <Property Name="idEmpresa" Type="Int32" />
+          <Property Name="numeroHistoria" Type="String" MaxLength="6" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="tipoFinanciador" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="veterinaria" Type="Boolean" />
+          <Property Name="observacion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <Property Name="nombreUsuario" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Empresas" Relationship="Self.FK__Pacientes__idEmp__1ED998B2" FromRole="Pacientes" ToRole="Empresas" />
+          <NavigationProperty Name="Personas" Relationship="Self.FK__Pacientes__idPer__1DE57479" FromRole="Pacientes" ToRole="Personas" />
+        </EntityType>
+        <EntityType Name="Personas">
+          <Key>
+            <PropertyRef Name="idPersona" />
+          </Key>
+          <Property Name="idPersona" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="prNombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="sgNombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="aPaterno" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="aMaterno" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="fechaNacimiento" Type="DateTime" Precision="3" />
+          <Property Name="sexo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tipoDocumento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="numDocumento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="direccion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="numDireccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="intDireccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mzaDireccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lteDireccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="telefono" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="celular" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="trabajo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="discapacitado" Type="Boolean" />
+          <Property Name="tipoLocalidad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="nombreLocalidad" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="idDistrito" Type="Int32" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Distritos" Relationship="Self.FK__Personas__idDist__182C9B23" FromRole="Personas" ToRole="Distritos" />
+          <NavigationProperty Name="Pacientes" Relationship="Self.FK__Pacientes__idPer__1DE57479" FromRole="Personas" ToRole="Pacientes" />
+          <NavigationProperty Name="Trabajadores" Relationship="Self.FK__Trabajado__idPer__25869641" FromRole="Personas" ToRole="Trabajadores" />
+        </EntityType>
+        <EntityType Name="Provincias">
+          <Key>
+            <PropertyRef Name="idProvincia" />
+          </Key>
+          <Property Name="idProvincia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="idDepartamento" Type="Int32" />
+          <NavigationProperty Name="Departamentos" Relationship="Self.FK__Provincia__idDep__1273C1CD" FromRole="Provincias" ToRole="Departamentos" />
+          <NavigationProperty Name="Distritos" Relationship="Self.FK__Distritos__idPro__15502E78" FromRole="Provincias" ToRole="Distritos" />
+        </EntityType>
+        <EntityType Name="RazonesFinancieras">
+          <Key>
+            <PropertyRef Name="idRazonFinanciera" />
+          </Key>
+          <Property Name="idRazonFinanciera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="tipo" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Egresos" Relationship="Self.FK__Egresos__idRazon__5812160E" FromRole="RazonesFinancieras" ToRole="Egresos" />
+          <NavigationProperty Name="Ingresos" Relationship="Self.FK__Ingresos__idRazo__5AEE82B9" FromRole="RazonesFinancieras" ToRole="Ingresos" />
+          <NavigationProperty Name="Sueldos" Relationship="Self.FK__Sueldos__idRazon__4D94879B" FromRole="RazonesFinancieras" ToRole="Sueldos" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreRol" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Trabajadores" Relationship="Self.TrabajadorRol" FromRole="Roles" ToRole="Trabajadores" />
+        </EntityType>
+        <EntityType Name="Servicios">
+          <Key>
+            <PropertyRef Name="idServicio" />
+          </Key>
+          <Property Name="idServicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="breve" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="idSubClase" Type="Int32" />
+          <Property Name="idUnidadMedida" Type="Int32" />
+          <Property Name="idArea" Type="Int32" />
+          <Property Name="importeBase" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="veterinaria" Type="Boolean" />
+          <Property Name="categSocial" Type="Boolean" />
+          <Property Name="categTemporal" Type="Boolean" />
+          <Property Name="tarifaLibre" Type="Boolean" />
+          <Property Name="igv" Type="Boolean" />
+          <Property Name="idTipoAydDiag" Type="Int32" />
+          <Property Name="idCpt" Type="Int32" />
+          <Property Name="observacion" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="tipoServicio" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="Areas" Relationship="Self.FK__Servicios__idAre__38996AB5" FromRole="Servicios" ToRole="Areas" />
+          <NavigationProperty Name="Cpts" Relationship="Self.FK__Servicios__idCpt__3A81B327" FromRole="Servicios" ToRole="Cpts" />
+          <NavigationProperty Name="SubClases" Relationship="Self.FK__Servicios__idSub__36B12243" FromRole="Servicios" ToRole="SubClases" />
+          <NavigationProperty Name="TipoAydDiags" Relationship="Self.FK__Servicios__idTip__398D8EEE" FromRole="Servicios" ToRole="TipoAydDiags" />
+          <NavigationProperty Name="UnidadesMedida" Relationship="Self.FK__Servicios__idUni__37A5467C" FromRole="Servicios" ToRole="UnidadesMedida" />
+          <NavigationProperty Name="Tarifas" Relationship="Self.FK__Tarifas__idServi__403A8C7D" FromRole="Servicios" ToRole="Tarifas" />
+          <NavigationProperty Name="Muestras" Relationship="Self.MuestrasServicios" FromRole="Servicios" ToRole="Muestras" />
+        </EntityType>
+        <EntityType Name="SubClases">
+          <Key>
+            <PropertyRef Name="idSubClase" />
+          </Key>
+          <Property Name="idSubClase" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idClase" Type="Int32" />
+          <Property Name="nombre" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clases" Relationship="Self.FK__SubClases__idCla__2E1BDC42" FromRole="SubClases" ToRole="Clases" />
+          <NavigationProperty Name="Servicios" Relationship="Self.FK__Servicios__idSub__36B12243" FromRole="SubClases" ToRole="Servicios" />
+        </EntityType>
+        <EntityType Name="Sueldos">
+          <Key>
+            <PropertyRef Name="idSueldo" />
+          </Key>
+          <Property Name="idSueldo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idTrabajador" Type="Int32" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="montoBase" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="cantidadDeServicios" Type="Int32" />
+          <Property Name="montoTotalPorServicios" Type="Decimal" Precision="10" Scale="4" />
+          <Property Name="estadoDePago" Type="Int32" Nullable="false" />
+          <Property Name="idRazonFinanciera" Type="Int32" />
+          <NavigationProperty Name="RazonesFinancieras" Relationship="Self.FK__Sueldos__idRazon__4D94879B" FromRole="Sueldos" ToRole="RazonesFinancieras" />
+          <NavigationProperty Name="Trabajadores" Relationship="Self.FK__Sueldos__idTraba__4CA06362" FromRole="Sueldos" ToRole="Trabajadores" />
+          <NavigationProperty Name="TrabajadorDescuentos" Relationship="Self.FK__Trabajado__idSue__5165187F" FromRole="Sueldos" ToRole="TrabajadorDescuentos" />
+          <NavigationProperty Name="TrabajadorIncentivo" Relationship="Self.FK__Trabajado__idSue__5535A963" FromRole="Sueldos" ToRole="TrabajadorIncentivo" />
+        </EntityType>
+        <EntityType Name="Tarifas">
+          <Key>
+            <PropertyRef Name="idTarifa" />
+          </Key>
+          <Property Name="idTarifa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idServicio" Type="Int32" />
+          <Property Name="tipoFinanciador" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="precioCalculado" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="precioExcepcion" Type="Decimal" Precision="8" Scale="2" />
+          <Property Name="tarifa" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="observacion" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" />
+          <NavigationProperty Name="Servicios" Relationship="Self.FK__Tarifas__idServi__403A8C7D" FromRole="Tarifas" ToRole="Servicios" />
+        </EntityType>
+        <EntityType Name="TipoAydDiags">
+          <Key>
+            <PropertyRef Name="idTipoAydDiag" />
+          </Key>
+          <Property Name="idTipoAydDiag" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Servicios" Relationship="Self.FK__Servicios__idTip__398D8EEE" FromRole="TipoAydDiags" ToRole="Servicios" />
+        </EntityType>
+        <EntityType Name="TiposTrabajador">
+          <Key>
+            <PropertyRef Name="idTipoTrabajador" />
+          </Key>
+          <Property Name="idTipoTrabajador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Trabajadores" Relationship="Self.FK__Trabajado__idTip__267ABA7A" FromRole="TiposTrabajador" ToRole="Trabajadores" />
+        </EntityType>
+        <EntityType Name="Trabajadores">
+          <Key>
+            <PropertyRef Name="idTrabajador" />
+          </Key>
+          <Property Name="idTrabajador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPersona" Type="Int32" />
+          <Property Name="idTipoTrabajador" Type="Int32" />
+          <Property Name="idArea" Type="Int32" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <Property Name="nombreUsuario" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="fechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Areas" Relationship="Self.FK__Trabajado__idAre__276EDEB3" FromRole="Trabajadores" ToRole="Areas" />
+          <NavigationProperty Name="Personas" Relationship="Self.FK__Trabajado__idPer__25869641" FromRole="Trabajadores" ToRole="Personas" />
+          <NavigationProperty Name="Sueldos" Relationship="Self.FK__Sueldos__idTraba__4CA06362" FromRole="Trabajadores" ToRole="Sueldos" />
+          <NavigationProperty Name="TiposTrabajador" Relationship="Self.FK__Trabajado__idTip__267ABA7A" FromRole="Trabajadores" ToRole="TiposTrabajador" />
+          <NavigationProperty Name="TrabajadorDescuentos" Relationship="Self.FK__Trabajado__idTra__4F7CD00D" FromRole="Trabajadores" ToRole="TrabajadorDescuentos" />
+          <NavigationProperty Name="TrabajadorIncentivo" Relationship="Self.FK__Trabajado__idTra__534D60F1" FromRole="Trabajadores" ToRole="TrabajadorIncentivo" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuarios__idTrab__440B1D61" FromRole="Trabajadores" ToRole="Usuarios" />
+          <NavigationProperty Name="Roles" Relationship="Self.TrabajadorRol" FromRole="Trabajadores" ToRole="Roles" />
+        </EntityType>
+        <EntityType Name="UnidadesMedida">
+          <Key>
+            <PropertyRef Name="idUnidadMedida" />
+          </Key>
+          <Property Name="idUnidadMedida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Servicios" Relationship="Self.FK__Servicios__idUni__37A5467C" FromRole="UnidadesMedida" ToRole="Servicios" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idTrabajador" Type="Int32" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="clave" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Trabajadores" Relationship="Self.FK__Usuarios__idTrab__440B1D61" FromRole="Usuarios" ToRole="Trabajadores" />
+        </EntityType>
+        <EntityType Name="TrabajadorDescuentos">
+          <Key>
+            <PropertyRef Name="estado" />
+          </Key>
+          <Property Name="idTrabajador" Type="Int32" />
+          <Property Name="monto" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="idDescuento" Type="Int32" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="idSueldo" Type="Int32" />
+          <Property Name="observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Descuentos" Relationship="Self.FK__Trabajado__idDes__5070F446" FromRole="TrabajadorDescuentos" ToRole="Descuentos" />
+          <NavigationProperty Name="Sueldos" Relationship="Self.FK__Trabajado__idSue__5165187F" FromRole="TrabajadorDescuentos" ToRole="Sueldos" />
+          <NavigationProperty Name="Trabajadores" Relationship="Self.FK__Trabajado__idTra__4F7CD00D" FromRole="TrabajadorDescuentos" ToRole="Trabajadores" />
+        </EntityType>
+        <EntityType Name="TrabajadorIncentivo">
+          <Key>
+            <PropertyRef Name="estado" />
+          </Key>
+          <Property Name="idTrabajador" Type="Int32" />
+          <Property Name="monto" Type="Decimal" Precision="10" Scale="5" />
+          <Property Name="idIncentivo" Type="Int32" />
+          <Property Name="estado" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Precision="3" />
+          <Property Name="idSueldo" Type="Int32" />
+          <Property Name="observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Incentivos" Relationship="Self.FK__Trabajado__idInc__5441852A" FromRole="TrabajadorIncentivo" ToRole="Incentivos" />
+          <NavigationProperty Name="Sueldos" Relationship="Self.FK__Trabajado__idSue__5535A963" FromRole="TrabajadorIncentivo" ToRole="Sueldos" />
+          <NavigationProperty Name="Trabajadores" Relationship="Self.FK__Trabajado__idTra__534D60F1" FromRole="TrabajadorIncentivo" ToRole="Trabajadores" />
+        </EntityType>
+        <Association Name="FK__Servicios__idAre__38996AB5">
+          <End Role="Areas" Type="Self.Areas" Multiplicity="0..1" />
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="idArea" />
+            </Principal>
+            <Dependent Role="Servicios">
+              <PropertyRef Name="idArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idAre__276EDEB3">
+          <End Role="Areas" Type="Self.Areas" Multiplicity="0..1" />
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="idArea" />
+            </Principal>
+            <Dependent Role="Trabajadores">
+              <PropertyRef Name="idArea" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SubClases__idCla__2E1BDC42">
+          <End Role="Clases" Type="Self.Clases" Multiplicity="0..1" />
+          <End Role="SubClases" Type="Self.SubClases" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clases">
+              <PropertyRef Name="idClase" />
+            </Principal>
+            <Dependent Role="SubClases">
+              <PropertyRef Name="idClase" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__idCpt__3A81B327">
+          <End Role="Cpts" Type="Self.Cpts" Multiplicity="0..1" />
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cpts">
+              <PropertyRef Name="idCpt" />
+            </Principal>
+            <Dependent Role="Servicios">
+              <PropertyRef Name="idCpt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Provincia__idDep__1273C1CD">
+          <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="0..1" />
+          <End Role="Provincias" Type="Self.Provincias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamentos">
+              <PropertyRef Name="idDepartamento" />
+            </Principal>
+            <Dependent Role="Provincias">
+              <PropertyRef Name="idDepartamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idDes__5070F446">
+          <End Role="Descuentos" Type="Self.Descuentos" Multiplicity="0..1" />
+          <End Role="TrabajadorDescuentos" Type="Self.TrabajadorDescuentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Descuentos">
+              <PropertyRef Name="idDescuento" />
+            </Principal>
+            <Dependent Role="TrabajadorDescuentos">
+              <PropertyRef Name="idDescuento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Distritos__idPro__15502E78">
+          <End Role="Provincias" Type="Self.Provincias" Multiplicity="0..1" />
+          <End Role="Distritos" Type="Self.Distritos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincias">
+              <PropertyRef Name="idProvincia" />
+            </Principal>
+            <Dependent Role="Distritos">
+              <PropertyRef Name="idProvincia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Empresas__idDist__1B0907CE">
+          <End Role="Distritos" Type="Self.Distritos" Multiplicity="0..1" />
+          <End Role="Empresas" Type="Self.Empresas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distritos">
+              <PropertyRef Name="idDistrito" />
+            </Principal>
+            <Dependent Role="Empresas">
+              <PropertyRef Name="idDistrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Personas__idDist__182C9B23">
+          <End Role="Distritos" Type="Self.Distritos" Multiplicity="0..1" />
+          <End Role="Personas" Type="Self.Personas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Distritos">
+              <PropertyRef Name="idDistrito" />
+            </Principal>
+            <Dependent Role="Personas">
+              <PropertyRef Name="idDistrito" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Egresos__idRazon__5812160E">
+          <End Role="RazonesFinancieras" Type="Self.RazonesFinancieras" Multiplicity="0..1" />
+          <End Role="Egresos" Type="Self.Egresos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RazonesFinancieras">
+              <PropertyRef Name="idRazonFinanciera" />
+            </Principal>
+            <Dependent Role="Egresos">
+              <PropertyRef Name="idRazonFinanciera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pacientes__idEmp__1ED998B2">
+          <End Role="Empresas" Type="Self.Empresas" Multiplicity="0..1" />
+          <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="idEmpresa" />
+            </Principal>
+            <Dependent Role="Pacientes">
+              <PropertyRef Name="idEmpresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idInc__5441852A">
+          <End Role="Incentivos" Type="Self.Incentivos" Multiplicity="0..1" />
+          <End Role="TrabajadorIncentivo" Type="Self.TrabajadorIncentivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Incentivos">
+              <PropertyRef Name="idIncentivo" />
+            </Principal>
+            <Dependent Role="TrabajadorIncentivo">
+              <PropertyRef Name="idIncentivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ingresos__idRazo__5AEE82B9">
+          <End Role="RazonesFinancieras" Type="Self.RazonesFinancieras" Multiplicity="0..1" />
+          <End Role="Ingresos" Type="Self.Ingresos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RazonesFinancieras">
+              <PropertyRef Name="idRazonFinanciera" />
+            </Principal>
+            <Dependent Role="Ingresos">
+              <PropertyRef Name="idRazonFinanciera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Pacientes__idPer__1DE57479">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="0..1" />
+          <End Role="Pacientes" Type="Self.Pacientes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="idPersona" />
+            </Principal>
+            <Dependent Role="Pacientes">
+              <PropertyRef Name="idPersona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idPer__25869641">
+          <End Role="Personas" Type="Self.Personas" Multiplicity="0..1" />
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personas">
+              <PropertyRef Name="idPersona" />
+            </Principal>
+            <Dependent Role="Trabajadores">
+              <PropertyRef Name="idPersona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sueldos__idRazon__4D94879B">
+          <End Role="RazonesFinancieras" Type="Self.RazonesFinancieras" Multiplicity="0..1" />
+          <End Role="Sueldos" Type="Self.Sueldos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RazonesFinancieras">
+              <PropertyRef Name="idRazonFinanciera" />
+            </Principal>
+            <Dependent Role="Sueldos">
+              <PropertyRef Name="idRazonFinanciera" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__idSub__36B12243">
+          <End Role="SubClases" Type="Self.SubClases" Multiplicity="0..1" />
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubClases">
+              <PropertyRef Name="idSubClase" />
+            </Principal>
+            <Dependent Role="Servicios">
+              <PropertyRef Name="idSubClase" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__idTip__398D8EEE">
+          <End Role="TipoAydDiags" Type="Self.TipoAydDiags" Multiplicity="0..1" />
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoAydDiags">
+              <PropertyRef Name="idTipoAydDiag" />
+            </Principal>
+            <Dependent Role="Servicios">
+              <PropertyRef Name="idTipoAydDiag" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Servicios__idUni__37A5467C">
+          <End Role="UnidadesMedida" Type="Self.UnidadesMedida" Multiplicity="0..1" />
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UnidadesMedida">
+              <PropertyRef Name="idUnidadMedida" />
+            </Principal>
+            <Dependent Role="Servicios">
+              <PropertyRef Name="idUnidadMedida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tarifas__idServi__403A8C7D">
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="0..1" />
+          <End Role="Tarifas" Type="Self.Tarifas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Servicios">
+              <PropertyRef Name="idServicio" />
+            </Principal>
+            <Dependent Role="Tarifas">
+              <PropertyRef Name="idServicio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Sueldos__idTraba__4CA06362">
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="0..1" />
+          <End Role="Sueldos" Type="Self.Sueldos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trabajadores">
+              <PropertyRef Name="idTrabajador" />
+            </Principal>
+            <Dependent Role="Sueldos">
+              <PropertyRef Name="idTrabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idSue__5165187F">
+          <End Role="Sueldos" Type="Self.Sueldos" Multiplicity="0..1" />
+          <End Role="TrabajadorDescuentos" Type="Self.TrabajadorDescuentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sueldos">
+              <PropertyRef Name="idSueldo" />
+            </Principal>
+            <Dependent Role="TrabajadorDescuentos">
+              <PropertyRef Name="idSueldo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idSue__5535A963">
+          <End Role="Sueldos" Type="Self.Sueldos" Multiplicity="0..1" />
+          <End Role="TrabajadorIncentivo" Type="Self.TrabajadorIncentivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sueldos">
+              <PropertyRef Name="idSueldo" />
+            </Principal>
+            <Dependent Role="TrabajadorIncentivo">
+              <PropertyRef Name="idSueldo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idTip__267ABA7A">
+          <End Role="TiposTrabajador" Type="Self.TiposTrabajador" Multiplicity="0..1" />
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposTrabajador">
+              <PropertyRef Name="idTipoTrabajador" />
+            </Principal>
+            <Dependent Role="Trabajadores">
+              <PropertyRef Name="idTipoTrabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idTra__4F7CD00D">
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="0..1" />
+          <End Role="TrabajadorDescuentos" Type="Self.TrabajadorDescuentos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trabajadores">
+              <PropertyRef Name="idTrabajador" />
+            </Principal>
+            <Dependent Role="TrabajadorDescuentos">
+              <PropertyRef Name="idTrabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Trabajado__idTra__534D60F1">
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="0..1" />
+          <End Role="TrabajadorIncentivo" Type="Self.TrabajadorIncentivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trabajadores">
+              <PropertyRef Name="idTrabajador" />
+            </Principal>
+            <Dependent Role="TrabajadorIncentivo">
+              <PropertyRef Name="idTrabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuarios__idTrab__440B1D61">
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="0..1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trabajadores">
+              <PropertyRef Name="idTrabajador" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="idTrabajador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MuestrasServicios">
+          <End Role="Muestras" Type="Self.Muestras" Multiplicity="*" />
+          <End Role="Servicios" Type="Self.Servicios" Multiplicity="*" />
+        </Association>
+        <Association Name="TrabajadorRol">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="*" />
+          <End Role="Trabajadores" Type="Self.Trabajadores" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="ClinicaDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Areas" EntityType="Self.Areas" />
+          <EntitySet Name="Clases" EntityType="Self.Clases" />
+          <EntitySet Name="Cpts" EntityType="Self.Cpts" />
+          <EntitySet Name="Departamentos" EntityType="Self.Departamentos" />
+          <EntitySet Name="Descuentos" EntityType="Self.Descuentos" />
+          <EntitySet Name="Distritos" EntityType="Self.Distritos" />
+          <EntitySet Name="Egresos" EntityType="Self.Egresos" />
+          <EntitySet Name="Empresas" EntityType="Self.Empresas" />
+          <EntitySet Name="Incentivos" EntityType="Self.Incentivos" />
+          <EntitySet Name="Ingresos" EntityType="Self.Ingresos" />
+          <EntitySet Name="Muestras" EntityType="Self.Muestras" />
+          <EntitySet Name="Pacientes" EntityType="Self.Pacientes" />
+          <EntitySet Name="Personas" EntityType="Self.Personas" />
+          <EntitySet Name="Provincias" EntityType="Self.Provincias" />
+          <EntitySet Name="RazonesFinancieras" EntityType="Self.RazonesFinancieras" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" />
+          <EntitySet Name="Servicios" EntityType="Self.Servicios" />
+          <EntitySet Name="SubClases" EntityType="Self.SubClases" />
+          <EntitySet Name="Sueldos" EntityType="Self.Sueldos" />
+          <EntitySet Name="Tarifas" EntityType="Self.Tarifas" />
+          <EntitySet Name="TipoAydDiags" EntityType="Self.TipoAydDiags" />
+          <EntitySet Name="TiposTrabajador" EntityType="Self.TiposTrabajador" />
+          <EntitySet Name="Trabajadores" EntityType="Self.Trabajadores" />
+          <EntitySet Name="UnidadesMedida" EntityType="Self.UnidadesMedida" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <EntitySet Name="TrabajadorDescuentos" EntityType="Self.TrabajadorDescuentos" />
+          <EntitySet Name="TrabajadorIncentivo" EntityType="Self.TrabajadorIncentivo" />
+          <AssociationSet Name="FK__Servicios__idAre__38996AB5" Association="Self.FK__Servicios__idAre__38996AB5">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="Servicios" EntitySet="Servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idAre__276EDEB3" Association="Self.FK__Trabajado__idAre__276EDEB3">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SubClases__idCla__2E1BDC42" Association="Self.FK__SubClases__idCla__2E1BDC42">
+            <End Role="Clases" EntitySet="Clases" />
+            <End Role="SubClases" EntitySet="SubClases" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__idCpt__3A81B327" Association="Self.FK__Servicios__idCpt__3A81B327">
+            <End Role="Cpts" EntitySet="Cpts" />
+            <End Role="Servicios" EntitySet="Servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Provincia__idDep__1273C1CD" Association="Self.FK__Provincia__idDep__1273C1CD">
+            <End Role="Departamentos" EntitySet="Departamentos" />
+            <End Role="Provincias" EntitySet="Provincias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idDes__5070F446" Association="Self.FK__Trabajado__idDes__5070F446">
+            <End Role="Descuentos" EntitySet="Descuentos" />
+            <End Role="TrabajadorDescuentos" EntitySet="TrabajadorDescuentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Distritos__idPro__15502E78" Association="Self.FK__Distritos__idPro__15502E78">
+            <End Role="Provincias" EntitySet="Provincias" />
+            <End Role="Distritos" EntitySet="Distritos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Empresas__idDist__1B0907CE" Association="Self.FK__Empresas__idDist__1B0907CE">
+            <End Role="Distritos" EntitySet="Distritos" />
+            <End Role="Empresas" EntitySet="Empresas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Personas__idDist__182C9B23" Association="Self.FK__Personas__idDist__182C9B23">
+            <End Role="Distritos" EntitySet="Distritos" />
+            <End Role="Personas" EntitySet="Personas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Egresos__idRazon__5812160E" Association="Self.FK__Egresos__idRazon__5812160E">
+            <End Role="RazonesFinancieras" EntitySet="RazonesFinancieras" />
+            <End Role="Egresos" EntitySet="Egresos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pacientes__idEmp__1ED998B2" Association="Self.FK__Pacientes__idEmp__1ED998B2">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Pacientes" EntitySet="Pacientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idInc__5441852A" Association="Self.FK__Trabajado__idInc__5441852A">
+            <End Role="Incentivos" EntitySet="Incentivos" />
+            <End Role="TrabajadorIncentivo" EntitySet="TrabajadorIncentivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ingresos__idRazo__5AEE82B9" Association="Self.FK__Ingresos__idRazo__5AEE82B9">
+            <End Role="RazonesFinancieras" EntitySet="RazonesFinancieras" />
+            <End Role="Ingresos" EntitySet="Ingresos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Pacientes__idPer__1DE57479" Association="Self.FK__Pacientes__idPer__1DE57479">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Pacientes" EntitySet="Pacientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idPer__25869641" Association="Self.FK__Trabajado__idPer__25869641">
+            <End Role="Personas" EntitySet="Personas" />
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sueldos__idRazon__4D94879B" Association="Self.FK__Sueldos__idRazon__4D94879B">
+            <End Role="RazonesFinancieras" EntitySet="RazonesFinancieras" />
+            <End Role="Sueldos" EntitySet="Sueldos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__idSub__36B12243" Association="Self.FK__Servicios__idSub__36B12243">
+            <End Role="SubClases" EntitySet="SubClases" />
+            <End Role="Servicios" EntitySet="Servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__idTip__398D8EEE" Association="Self.FK__Servicios__idTip__398D8EEE">
+            <End Role="TipoAydDiags" EntitySet="TipoAydDiags" />
+            <End Role="Servicios" EntitySet="Servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Servicios__idUni__37A5467C" Association="Self.FK__Servicios__idUni__37A5467C">
+            <End Role="UnidadesMedida" EntitySet="UnidadesMedida" />
+            <End Role="Servicios" EntitySet="Servicios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tarifas__idServi__403A8C7D" Association="Self.FK__Tarifas__idServi__403A8C7D">
+            <End Role="Servicios" EntitySet="Servicios" />
+            <End Role="Tarifas" EntitySet="Tarifas" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Sueldos__idTraba__4CA06362" Association="Self.FK__Sueldos__idTraba__4CA06362">
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+            <End Role="Sueldos" EntitySet="Sueldos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idSue__5165187F" Association="Self.FK__Trabajado__idSue__5165187F">
+            <End Role="Sueldos" EntitySet="Sueldos" />
+            <End Role="TrabajadorDescuentos" EntitySet="TrabajadorDescuentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idSue__5535A963" Association="Self.FK__Trabajado__idSue__5535A963">
+            <End Role="Sueldos" EntitySet="Sueldos" />
+            <End Role="TrabajadorIncentivo" EntitySet="TrabajadorIncentivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idTip__267ABA7A" Association="Self.FK__Trabajado__idTip__267ABA7A">
+            <End Role="TiposTrabajador" EntitySet="TiposTrabajador" />
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idTra__4F7CD00D" Association="Self.FK__Trabajado__idTra__4F7CD00D">
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+            <End Role="TrabajadorDescuentos" EntitySet="TrabajadorDescuentos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Trabajado__idTra__534D60F1" Association="Self.FK__Trabajado__idTra__534D60F1">
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+            <End Role="TrabajadorIncentivo" EntitySet="TrabajadorIncentivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuarios__idTrab__440B1D61" Association="Self.FK__Usuarios__idTrab__440B1D61">
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="MuestrasServicios" Association="Self.MuestrasServicios">
+            <End Role="Muestras" EntitySet="Muestras" />
+            <End Role="Servicios" EntitySet="Servicios" />
+          </AssociationSet>
+          <AssociationSet Name="TrabajadorRol" Association="Self.TrabajadorRol">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Trabajadores" EntitySet="Trabajadores" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ClinicaDBModelStoreContainer" CdmEntityContainer="ClinicaDBEntities">
+          <EntitySetMapping Name="Areas">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Areas">
+              <MappingFragment StoreEntitySet="Areas">
+                <ScalarProperty Name="idArea" ColumnName="idArea" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="breve" ColumnName="breve" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clases">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Clases">
+              <MappingFragment StoreEntitySet="Clases">
+                <ScalarProperty Name="idClase" ColumnName="idClase" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cpts">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Cpts">
+              <MappingFragment StoreEntitySet="Cpts">
+                <ScalarProperty Name="idCpt" ColumnName="idCpt" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departamentos">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Departamentos">
+              <MappingFragment StoreEntitySet="Departamentos">
+                <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Descuentos">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Descuentos">
+              <MappingFragment StoreEntitySet="Descuentos">
+                <ScalarProperty Name="idDescuento" ColumnName="idDescuento" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Distritos">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Distritos">
+              <MappingFragment StoreEntitySet="Distritos">
+                <ScalarProperty Name="idDistrito" ColumnName="idDistrito" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Egresos">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Egresos">
+              <MappingFragment StoreEntitySet="Egresos">
+                <ScalarProperty Name="idEgreso" ColumnName="idEgreso" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idRazonFinanciera" ColumnName="idRazonFinanciera" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empresas">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Empresas">
+              <MappingFragment StoreEntitySet="Empresas">
+                <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="veterinaria" ColumnName="veterinaria" />
+                <ScalarProperty Name="abreviado" ColumnName="abreviado" />
+                <ScalarProperty Name="giroNegocio" ColumnName="giroNegocio" />
+                <ScalarProperty Name="grupo" ColumnName="grupo" />
+                <ScalarProperty Name="contacto" ColumnName="contacto" />
+                <ScalarProperty Name="atencion" ColumnName="atencion" />
+                <ScalarProperty Name="ruc" ColumnName="ruc" />
+                <ScalarProperty Name="fechaConstitucion" ColumnName="fechaConstitucion" />
+                <ScalarProperty Name="fechaAniversario" ColumnName="fechaAniversario" />
+                <ScalarProperty Name="cargo" ColumnName="cargo" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="idDistrito" ColumnName="idDistrito" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="anexo" ColumnName="anexo" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="homePage" ColumnName="homePage" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Incentivos">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Incentivos">
+              <MappingFragment StoreEntitySet="Incentivos">
+                <ScalarProperty Name="idIncentivo" ColumnName="idIncentivo" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ingresos">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Ingresos">
+              <MappingFragment StoreEntitySet="Ingresos">
+                <ScalarProperty Name="idIngreso" ColumnName="idIngreso" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idRazonFinanciera" ColumnName="idRazonFinanciera" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Muestras">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Muestras">
+              <MappingFragment StoreEntitySet="Muestras">
+                <ScalarProperty Name="idMuestra" ColumnName="idMuestra" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pacientes">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Pacientes">
+              <MappingFragment StoreEntitySet="Pacientes">
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="idPersona" ColumnName="idPersona" />
+                <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+                <ScalarProperty Name="numeroHistoria" ColumnName="numeroHistoria" />
+                <ScalarProperty Name="tipoFinanciador" ColumnName="tipoFinanciador" />
+                <ScalarProperty Name="veterinaria" ColumnName="veterinaria" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personas">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Personas">
+              <MappingFragment StoreEntitySet="Personas">
+                <ScalarProperty Name="idPersona" ColumnName="idPersona" />
+                <ScalarProperty Name="prNombre" ColumnName="prNombre" />
+                <ScalarProperty Name="sgNombre" ColumnName="sgNombre" />
+                <ScalarProperty Name="aPaterno" ColumnName="aPaterno" />
+                <ScalarProperty Name="aMaterno" ColumnName="aMaterno" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="tipoDocumento" ColumnName="tipoDocumento" />
+                <ScalarProperty Name="numDocumento" ColumnName="numDocumento" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="numDireccion" ColumnName="numDireccion" />
+                <ScalarProperty Name="intDireccion" ColumnName="intDireccion" />
+                <ScalarProperty Name="mzaDireccion" ColumnName="mzaDireccion" />
+                <ScalarProperty Name="lteDireccion" ColumnName="lteDireccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="trabajo" ColumnName="trabajo" />
+                <ScalarProperty Name="discapacitado" ColumnName="discapacitado" />
+                <ScalarProperty Name="tipoLocalidad" ColumnName="tipoLocalidad" />
+                <ScalarProperty Name="nombreLocalidad" ColumnName="nombreLocalidad" />
+                <ScalarProperty Name="idDistrito" ColumnName="idDistrito" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provincias">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Provincias">
+              <MappingFragment StoreEntitySet="Provincias">
+                <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RazonesFinancieras">
+            <EntityTypeMapping TypeName="ClinicaDBModel.RazonesFinancieras">
+              <MappingFragment StoreEntitySet="RazonesFinancieras">
+                <ScalarProperty Name="idRazonFinanciera" ColumnName="idRazonFinanciera" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="nombreRol" ColumnName="nombreRol" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Servicios">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Servicios">
+              <MappingFragment StoreEntitySet="Servicios">
+                <ScalarProperty Name="idServicio" ColumnName="idServicio" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="breve" ColumnName="breve" />
+                <ScalarProperty Name="idSubClase" ColumnName="idSubClase" />
+                <ScalarProperty Name="idUnidadMedida" ColumnName="idUnidadMedida" />
+                <ScalarProperty Name="idArea" ColumnName="idArea" />
+                <ScalarProperty Name="importeBase" ColumnName="importeBase" />
+                <ScalarProperty Name="veterinaria" ColumnName="veterinaria" />
+                <ScalarProperty Name="categSocial" ColumnName="categSocial" />
+                <ScalarProperty Name="categTemporal" ColumnName="categTemporal" />
+                <ScalarProperty Name="tarifaLibre" ColumnName="tarifaLibre" />
+                <ScalarProperty Name="igv" ColumnName="igv" />
+                <ScalarProperty Name="idTipoAydDiag" ColumnName="idTipoAydDiag" />
+                <ScalarProperty Name="idCpt" ColumnName="idCpt" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="tipoServicio" ColumnName="tipoServicio" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubClases">
+            <EntityTypeMapping TypeName="ClinicaDBModel.SubClases">
+              <MappingFragment StoreEntitySet="SubClases">
+                <ScalarProperty Name="idSubClase" ColumnName="idSubClase" />
+                <ScalarProperty Name="idClase" ColumnName="idClase" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sueldos">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Sueldos">
+              <MappingFragment StoreEntitySet="Sueldos">
+                <ScalarProperty Name="idSueldo" ColumnName="idSueldo" />
+                <ScalarProperty Name="idTrabajador" ColumnName="idTrabajador" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="montoBase" ColumnName="montoBase" />
+                <ScalarProperty Name="cantidadDeServicios" ColumnName="cantidadDeServicios" />
+                <ScalarProperty Name="montoTotalPorServicios" ColumnName="montoTotalPorServicios" />
+                <ScalarProperty Name="estadoDePago" ColumnName="estadoDePago" />
+                <ScalarProperty Name="idRazonFinanciera" ColumnName="idRazonFinanciera" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tarifas">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Tarifas">
+              <MappingFragment StoreEntitySet="Tarifas">
+                <ScalarProperty Name="idTarifa" ColumnName="idTarifa" />
+                <ScalarProperty Name="idServicio" ColumnName="idServicio" />
+                <ScalarProperty Name="tipoFinanciador" ColumnName="tipoFinanciador" />
+                <ScalarProperty Name="precioCalculado" ColumnName="precioCalculado" />
+                <ScalarProperty Name="precioExcepcion" ColumnName="precioExcepcion" />
+                <ScalarProperty Name="tarifa" ColumnName="tarifa" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoAydDiags">
+            <EntityTypeMapping TypeName="ClinicaDBModel.TipoAydDiags">
+              <MappingFragment StoreEntitySet="TipoAydDiags">
+                <ScalarProperty Name="idTipoAydDiag" ColumnName="idTipoAydDiag" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposTrabajador">
+            <EntityTypeMapping TypeName="ClinicaDBModel.TiposTrabajador">
+              <MappingFragment StoreEntitySet="TiposTrabajador">
+                <ScalarProperty Name="idTipoTrabajador" ColumnName="idTipoTrabajador" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trabajadores">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Trabajadores">
+              <MappingFragment StoreEntitySet="Trabajadores">
+                <ScalarProperty Name="idTrabajador" ColumnName="idTrabajador" />
+                <ScalarProperty Name="idPersona" ColumnName="idPersona" />
+                <ScalarProperty Name="idTipoTrabajador" ColumnName="idTipoTrabajador" />
+                <ScalarProperty Name="idArea" ColumnName="idArea" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+                <ScalarProperty Name="fechaCreacion" ColumnName="fechaCreacion" />
+                <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UnidadesMedida">
+            <EntityTypeMapping TypeName="ClinicaDBModel.UnidadesMedida">
+              <MappingFragment StoreEntitySet="UnidadesMedida">
+                <ScalarProperty Name="idUnidadMedida" ColumnName="idUnidadMedida" />
+                <ScalarProperty Name="codigo" ColumnName="codigo" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="ClinicaDBModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="idTrabajador" ColumnName="idTrabajador" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="clave" ColumnName="clave" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrabajadorDescuentos">
+            <EntityTypeMapping TypeName="ClinicaDBModel.TrabajadorDescuentos">
+              <MappingFragment StoreEntitySet="TrabajadorDescuentos">
+                <ScalarProperty Name="idTrabajador" ColumnName="idTrabajador" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="idDescuento" ColumnName="idDescuento" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idSueldo" ColumnName="idSueldo" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrabajadorIncentivo">
+            <EntityTypeMapping TypeName="ClinicaDBModel.TrabajadorIncentivo">
+              <MappingFragment StoreEntitySet="TrabajadorIncentivo">
+                <ScalarProperty Name="idTrabajador" ColumnName="idTrabajador" />
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="idIncentivo" ColumnName="idIncentivo" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idSueldo" ColumnName="idSueldo" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="MuestrasServicios" TypeName="ClinicaDBModel.MuestrasServicios" StoreEntitySet="MuestrasServicios">
+            <EndProperty Name="Muestras">
+              <ScalarProperty Name="idMuestra" ColumnName="idMuestra" />
+            </EndProperty>
+            <EndProperty Name="Servicios">
+              <ScalarProperty Name="idServicio" ColumnName="idServicio" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="TrabajadorRol" TypeName="ClinicaDBModel.TrabajadorRol" StoreEntitySet="TrabajadorRol">
+            <EndProperty Name="Roles">
+              <ScalarProperty Name="idRol" ColumnName="idRol" />
+            </EndProperty>
+            <EndProperty Name="Trabajadores">
+              <ScalarProperty Name="idTrabajador" ColumnName="idTrabajador" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

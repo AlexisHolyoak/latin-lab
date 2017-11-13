@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using latin_lab.Util;
 using System.Globalization;
+using latin_lab.Entities;
 
 namespace latin_lab
 {
@@ -18,6 +19,72 @@ namespace latin_lab
         public frmPacientes()
         {
             InitializeComponent();
+        }
+
+        public void habilitarComponentes1()
+        {
+            BTNCANCELAR.Enabled = true;
+            BTNGUARDAR.Enabled = true;
+            BTNIMPRIMIR.Enabled = false;
+            BTNNUEVOREG.Enabled = false;
+            TextBox[] txt = new TextBox[] {
+                TXTPATERNO,TXTMATERNO,TXTFRSTNOMBRE,TXTSCNDNOMBRE,
+                TXTDOCID,TXTDIRECCION,TXTNRO,TXTINTERIOR,TXTMZA,TXTLOTE,
+                TXTLOCALIDAD,TXTTELEFONO,TXTMOVIL,TXTTRABAJO
+            };
+            foreach (TextBox t in txt)
+            {
+                t.Enabled = true;
+                t.ReadOnly = false;
+            }
+            DTNACIMIENTO.Enabled = true;
+            CBTIPOFINANCIADOR.Enabled = true;
+            RTOBSERVACIONES.Enabled = true;
+            CBSEXO.Enabled = true;
+            CBTIPODOC.Enabled = true;
+            CBVETERINARIA.Enabled = true;
+            CBDISCAPACITADO.Enabled = true;
+        }
+        public void habilitarComponentes2()
+        {
+            BTNCANCELAR.Enabled = false;
+            BTNGUARDAR.Enabled = false;
+            BTNNUEVOREG.Enabled = true;
+            TextBox[] txt = new TextBox[] {
+                TXTPATERNO,TXTMATERNO,TXTFRSTNOMBRE,TXTSCNDNOMBRE,
+                TXTDOCID,TXTDIRECCION,TXTNRO,TXTINTERIOR,TXTMZA,TXTLOTE,
+                TXTLOCALIDAD,TXTTELEFONO,TXTMOVIL,TXTTRABAJO
+            };
+            foreach (TextBox t in txt)
+            {
+                t.Enabled = false;
+                t.ReadOnly = true;
+            }
+            DTNACIMIENTO.Enabled = false;
+            CBTIPOFINANCIADOR.Enabled = false;
+            RTOBSERVACIONES.Enabled = false;
+            CBSEXO.Enabled = false;
+            CBTIPODOC.Enabled = false;
+            CBVETERINARIA.Enabled = false;
+            CBDISCAPACITADO.Enabled = false;
+        }
+        public void limpiarComponentes()
+        {
+            TextBox[] txt = new TextBox[] {
+                TXTPATERNO,TXTMATERNO,TXTFRSTNOMBRE,TXTSCNDNOMBRE,
+                TXTDOCID,TXTDIRECCION,TXTNRO,TXTINTERIOR,TXTMZA,TXTLOTE,
+                TXTLOCALIDAD,TXTTELEFONO,TXTMOVIL,TXTTRABAJO
+            };
+            foreach (TextBox t in txt)
+            {
+                t.Text = "";
+            }
+            RTOBSERVACIONES.Text = "";
+            CBSEXO.SelectedIndex = -1;
+            CBTIPODOC.SelectedIndex = -1;
+            CBTIPOFINANCIADOR.SelectedIndex = -1;
+            CBVETERINARIA.Checked = false;
+            CBDISCAPACITADO.Checked = false;
         }
         //KEYLISTENER QUE VERIFICA EL INGRESO DE NUMEROS
         public void SoloNumeros(object sender, KeyPressEventArgs e)
@@ -39,9 +106,53 @@ namespace latin_lab
         {
             LimpiarErrores();
             AlternarMayuscula();
+
+            
+            
+
             if (Errores()) {
-                MessageBox.Show("ok");
+                MessageBox.Show("ok"); ClinicaDBEntities db = new ClinicaDBEntities();
+                Personas personas = new Personas();
+                personas.aPaterno = TXTPATERNO.Text;
+                personas.aMaterno = TXTMATERNO.Text;
+                personas.prNombre = TXTFRSTNOMBRE.Text;
+                personas.sgNombre = TXTSCNDNOMBRE.Text;
+                personas.fechaNacimiento = DateTime.Parse(DTNACIMIENTO.Text);
+                personas.sexo = CBSEXO.Text;
+                personas.tipoDocumento = CBTIPODOC.Text;
+                personas.numDocumento = TXTDOCID.Text;
+                if (CBDISCAPACITADO.Checked) personas.discapacitado = true;
+                else personas.discapacitado = false;
+                personas.direccion = TXTDIRECCION.Text;
+                personas.numDireccion = TXTNRO.Text;
+                personas.intDireccion = TXTINTERIOR.Text;
+                personas.lteDireccion = TXTLOTE.Text;
+                personas.tipoLocalidad = CBTIPOLOCALIDAD.Text;
+                personas.nombreLocalidad = TXTLOCALIDAD.Text;
+                personas.idDistrito = Convert.ToInt32(TXTIDDISTRITO.Text);
+                personas.estado = 1;
+                db.Personas.Add(personas);
+                db.SaveChanges();
+                var id = (from pe in db.Personas orderby pe.idPersona descending select new { pe.idPersona }).Single();
+                Pacientes pacientes = new Pacientes();
+                pacientes.idPersona = id.idPersona;
+                pacientes.tipoFinanciador = CBTIPOFINANCIADOR.Text;
+                if (CBVETERINARIA.Checked) pacientes.veterinaria = true;
+                else pacientes.veterinaria = false;
+                pacientes.observacion = RTOBSERVACIONES.Text;
+                pacientes.estado = 1;
+                pacientes.nombreUsuario = "nombre del wei";
+                pacientes.fechaCreacion = DateTime.Now;
+                db.Pacientes.Add(pacientes);
+                db.SaveChanges();
+                MessageBox.Show("¿Desea imprimir el registro?");
+
+
+
+                habilitarComponentes2();
+                limpiarComponentes();
             }
+            
         }
         public void AlternarMayuscula() {
             TXTPATERNO.Text = new CultureInfo("en-US").TextInfo.ToTitleCase(TXTPATERNO.Text);
@@ -76,16 +187,16 @@ namespace latin_lab
         }
         private void TXTLUGARNAC_TextChanged(object sender, EventArgs e)
         {
-            TXTIDLUGARNAC.Text = "";
-            using (ClinicaDBEntities context = new ClinicaDBEntities())
-            {
-                var id = from dis in context.Distritos where dis.nombreDistrito == TXTLUGARNAC.Text select dis;
-                List<Distritos> objDistrito = id.ToList();
-                foreach (Distritos d in objDistrito)
-                {
-                    TXTIDLUGARNAC.Text = d.idDistrito.ToString();
-                }
-            }
+            //TXTIDLUGARNAC.Text = "";
+            //using (ClinicaDBEntities context = new ClinicaDBEntities())
+            //{
+            //    var id = from dis in context.Distritos where dis.nombre == TXTLUGARNAC.Text select dis;
+            //    List<Distritos> objDistrito = id.ToList();
+            //    foreach (Distritos d in objDistrito)
+            //    {
+            //        TXTIDLUGARNAC.Text = d.idDistrito.ToString();
+            //    }
+            //}
         }
         public bool Errores() {
             bool ok = true;
@@ -105,32 +216,16 @@ namespace latin_lab
             }
             return ok;
         }
-        public void LimpiarErrores() {
+        public bool LimpiarErrores() {
             PACIENTESERRORES.SetError(TXTPATERNO, null);
             PACIENTESERRORES.SetError(TXTMATERNO, null);
             PACIENTESERRORES.SetError(TXTFRSTNOMBRE, null);
             PACIENTESERRORES.SetError(CBSEXO, null);
+            return true;
         }
         private void BTNACTUALIZAR_Click(object sender, EventArgs e)
         {
-            BTNCANCELAR.Enabled = true;
-            BTNACTUALIZAR.Enabled = false;
-            BTNGUARDAR.Enabled = true;
-            BTNIMPRIMIR.Enabled = false;
-            TextBox[] txt = new TextBox[] {
-                TXTPATERNO,TXTMATERNO,TXTFRSTNOMBRE,TXTSCNDNOMBRE,TXTLUGARNAC,
-                TXTDOCID,TXTDIRECCION,TXTNRO,TXTINTERIOR,TXTMZA,TXTLOTE,
-                TXTLOCALIDAD,TXTTELEFONO,TXTMOVIL,TXTTRABAJO
-            };
-            foreach (TextBox t in txt) {
-                t.Enabled = true;
-                t.ReadOnly = false;
-            }
-            DTNACIMIENTO.Enabled = true;
-            CBSEXO.Enabled = true;
-            CBTIPODOC.Enabled = true;
-            CBVETERINARIA.Enabled = true;
-            CBDISCAPACITADO.Enabled = true;
+            
         }
 
         private void BTNCANCELAR_Click(object sender, EventArgs e)
@@ -142,7 +237,7 @@ namespace latin_lab
             BTNGUARDAR.Enabled = false;
             BTNIMPRIMIR.Enabled = true;
             TextBox[] txt = new TextBox[] {
-                TXTPATERNO,TXTMATERNO,TXTFRSTNOMBRE,TXTSCNDNOMBRE,TXTLUGARNAC,
+                TXTPATERNO,TXTMATERNO,TXTFRSTNOMBRE,TXTSCNDNOMBRE,
                 TXTDOCID,TXTDIRECCION,TXTNRO,TXTINTERIOR,TXTMZA,TXTLOTE,
                 TXTLOCALIDAD,TXTDISTRITO,TXTTELEFONO,TXTMOVIL,TXTTRABAJO
             };
@@ -161,6 +256,7 @@ namespace latin_lab
         private void BTNSALIR_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
         private void BTNUNIDADMED_Click(object sender, EventArgs e)
@@ -176,13 +272,17 @@ namespace latin_lab
         private void frmPacientes_Resize(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Minimized)
-
             {
                 //meneo aqui
                 
             }
         }
-        
+
+        private void BTNNUEVOREG_Click(object sender, EventArgs e)
+        {
+            habilitarComponentes1();
+            limpiarComponentes();
+        }
     }
 
 }

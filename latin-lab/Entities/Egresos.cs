@@ -7,17 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace latin_lab
+namespace latin_lab.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Distritos
+    public partial class Egresos
     {
-        public int idDistrito { get; set; }
-        public string nombreDistrito { get; set; }
-        public int idProvincia { get; set; }
+        public int idEgreso { get; set; }
+        public string observacion { get; set; }
+        public Nullable<decimal> monto { get; set; }
+        public Nullable<System.DateTime> fecha { get; set; }
+        public Nullable<int> idRazonFinanciera { get; set; }
     
-        public virtual Provincias Provincias { get; set; }
+        public virtual RazonesFinancieras RazonesFinancieras { get; set; }
     }
 }

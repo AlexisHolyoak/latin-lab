@@ -1,4 +1,5 @@
-﻿using System;
+﻿using latin_lab.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,13 +29,16 @@ namespace latin_lab
         {
             try
             {
-                ClinicaDBEntities context = new ClinicaDBEntities();
-                var data = context.Distritos.Where(x=>x.nombreDistrito.StartsWith(TXTBUSCAR.Text))
-                    .Select(x => new { x.idDistrito,x.nombreDistrito }).ToList();
-                DGVWDISTRITOS.DataSource = data;
-                DGVWDISTRITOS.Columns[0].Visible = false;
-                DGVWDISTRITOS.Columns[1].HeaderText = "NOMBRE DE DISTRITO";
-                DGVWDISTRITOS.Columns[1].Width = 220;
+                using (ClinicaDBEntities db = new ClinicaDBEntities())
+                {
+                    var data = db.Distritos.Where(x => x.nombre.StartsWith(TXTBUSCAR.Text))
+                    .Select(x => new { x.idDistrito, x.nombre }).ToList();
+                    DGVWDISTRITOS.DataSource = data;
+                    DGVWDISTRITOS.Columns[0].Visible = false;
+                    DGVWDISTRITOS.Columns[1].HeaderText = "NOMBRE DE DISTRITO";
+                    DGVWDISTRITOS.Columns[1].Width = 220;
+                }
+                    
             }
             catch (Exception ex)
             {

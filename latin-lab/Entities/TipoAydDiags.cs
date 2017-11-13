@@ -7,25 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace latin_lab
+namespace latin_lab.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Provincias
+    public partial class TipoAydDiags
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Provincias()
+        public TipoAydDiags()
         {
-            this.Distritos = new HashSet<Distritos>();
+            this.Servicios = new HashSet<Servicios>();
         }
     
-        public int idProvincia { get; set; }
-        public string nombreProvincia { get; set; }
-        public int idDepartamento { get; set; }
+        public int idTipoAydDiag { get; set; }
+        public string nombre { get; set; }
+        public int estado { get; set; }
     
-        public virtual Departamentos Departamentos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Distritos> Distritos { get; set; }
+        public virtual ICollection<Servicios> Servicios { get; set; }
     }
 }
