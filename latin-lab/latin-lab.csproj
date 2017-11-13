@@ -126,6 +126,9 @@
     <Compile Include="Entities\Sueldos.cs">
       <DependentUpon>ClinicaDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\sysdiagrams.cs">
+      <DependentUpon>ClinicaDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Tarifas.cs">
       <DependentUpon>ClinicaDBModel.tt</DependentUpon>
     </Compile>
