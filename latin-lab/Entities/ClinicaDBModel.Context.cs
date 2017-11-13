@@ -44,6 +44,7 @@ namespace latin_lab.Entities
         public virtual DbSet<Servicios> Servicios { get; set; }
         public virtual DbSet<SubClases> SubClases { get; set; }
         public virtual DbSet<Sueldos> Sueldos { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tarifas> Tarifas { get; set; }
         public virtual DbSet<TipoAydDiags> TipoAydDiags { get; set; }
         public virtual DbSet<TiposTrabajador> TiposTrabajador { get; set; }
